@@ -71,11 +71,13 @@ struct ClientRowView: View {
     let client: Client
     var body: some View {
         HStack {
-            Text("")
-                .font(.headline)
+            Circle()
+                .frame(width: 35, height: 35)
+                .foregroundStyle(.secondary)
                 .overlay {
-                    Circle()
-                        .frame(width: 40, height: 40)
+                    Text((client.firstName?.prefix(1).capitalized ?? ""))
+                        .font(.title3.bold())
+                        .foregroundStyle(.white)
                 }
             VStack(alignment: .leading, spacing: 6) {
                 Text(client.firstName ?? "")

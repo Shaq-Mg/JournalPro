@@ -33,6 +33,7 @@ struct ClientDetailView: View {
                     client.isFavourite.toggle()
                 } label: {
                     Text("Favourite?")
+                        .foregroundStyle(client.isFavourite ? .indigo : .secondary)
                 }
                 
             }
