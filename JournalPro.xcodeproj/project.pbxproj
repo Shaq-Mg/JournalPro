@@ -15,6 +15,7 @@
 		468322692BF381E6006F9BD4 /* JournalProUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468322682BF381E6006F9BD4 /* JournalProUITests.swift */; };
 		4683226B2BF381E6006F9BD4 /* JournalProUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683226A2BF381E6006F9BD4 /* JournalProUITestsLaunchTests.swift */; };
 		4683227E2BF3826F006F9BD4 /* ClientModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4683227C2BF3826F006F9BD4 /* ClientModel.xcdatamodeld */; };
+		468322802BF382ED006F9BD4 /* ClientController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683227F2BF382ED006F9BD4 /* ClientController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		468322682BF381E6006F9BD4 /* JournalProUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalProUITests.swift; sourceTree = "<group>"; };
 		4683226A2BF381E6006F9BD4 /* JournalProUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalProUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4683227D2BF3826F006F9BD4 /* ClientModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClientModel.xcdatamodel; sourceTree = "<group>"; };
+		4683227F2BF382ED006F9BD4 /* ClientController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				4683227C2BF3826F006F9BD4 /* ClientModel.xcdatamodeld */,
+				468322812BF38716006F9BD4 /* DataController */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -168,6 +171,14 @@
 				4683224D2BF381E5006F9BD4 /* JournalProApp.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		468322812BF38716006F9BD4 /* DataController */ = {
+			isa = PBXGroup;
+			children = (
+				4683227F2BF382ED006F9BD4 /* ClientController.swift */,
+			);
+			path = DataController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				468322802BF382ED006F9BD4 /* ClientController.swift in Sources */,
 				468322502BF381E5006F9BD4 /* ContentView.swift in Sources */,
 				4683224E2BF381E5006F9BD4 /* JournalProApp.swift in Sources */,
 				4683227E2BF3826F006F9BD4 /* ClientModel.xcdatamodeld in Sources */,
