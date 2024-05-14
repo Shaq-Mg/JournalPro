@@ -18,10 +18,12 @@ class ClientController {
             }
         }
     }
-    func save(context: NSManagedObjectContext) throws {
-        if context.hasChanges {
+    func save(context: NSManagedObjectContext) {
+        do {
             try context.save()
             print("Data has saved successfully")
+        } catch {
+            print("Unable to save context")
         }
     }
     func addClient(firstName: String, lastName: String, phoneNumber: String,
@@ -34,24 +36,16 @@ class ClientController {
         client.isFavourite = isFavorite
         client.notes = notes
         
-       try? save(context: context)
+        save(context: context)
     }
     func editClient(client: Client, firstName: String, lastName: String, phoneNumber: String,
-                   isFavorite: Bool, notes: String, context: NSManagedObjectContext) {
+                    isFavorite: Bool, notes: String, context: NSManagedObjectContext) {
         client.firstName = firstName
         client.lastName = lastName
         client.phoneNumber = phoneNumber
         client.isFavourite = isFavorite
         client.notes = notes
         
-       try? save(context: context)
+        save(context: context)
     }
 }
-//    func save(context: NSManagedObjectContext) {
-//        do {
-//            try context.save()
-//            print("Data has saved successfully")
-//        } catch {
-//            print("Unable to save context")
-//        }
-//    }

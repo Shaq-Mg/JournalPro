@@ -17,13 +17,14 @@ struct ClientListView: View {
             List {
                 ForEach(clients) { client in
                     ZStack(alignment: .leading) {
-                        NavigationLink(destination: ClientDetailView()) {
+                        NavigationLink(destination: ClientDetailView(client: client)) {
                             EmptyView()
                         }
                         .opacity(0)
                         ClientRowView(client: client)
                     }
                 }
+                .onDelete(perform: delete)
             }
             .sheet(isPresented: $isShowNewClient, content: {
                 NavigationStack {
@@ -46,11 +47,16 @@ struct ClientListView: View {
                         Image(systemName: "ellipsis")
                             .rotationEffect(Angle(degrees: -90))
                     }
-
                 }
             }
             .font(.title2)
             .fontWeight(.semibold)
+        }
+    }
+    private func delete(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { _ in clients[0] }.forEach(moc.delete)
+            ClientController().save(context: moc)
         }
     }
 }

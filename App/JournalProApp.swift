@@ -12,7 +12,7 @@ struct JournalProApp: App {
     let clientController = ClientController()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ClientListView()
                 .environment(\.managedObjectContext, clientController.container.viewContext)
         }
     }

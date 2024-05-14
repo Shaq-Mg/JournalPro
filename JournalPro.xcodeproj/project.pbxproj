@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4683224E2BF381E5006F9BD4 /* JournalProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683224D2BF381E5006F9BD4 /* JournalProApp.swift */; };
-		468322502BF381E5006F9BD4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683224F2BF381E5006F9BD4 /* ContentView.swift */; };
 		468322522BF381E6006F9BD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468322512BF381E6006F9BD4 /* Assets.xcassets */; };
 		468322552BF381E6006F9BD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468322542BF381E6006F9BD4 /* Preview Assets.xcassets */; };
 		4683225F2BF381E6006F9BD4 /* JournalProTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683225E2BF381E6006F9BD4 /* JournalProTests.swift */; };
@@ -41,7 +40,6 @@
 /* Begin PBXFileReference section */
 		4683224A2BF381E5006F9BD4 /* JournalPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournalPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4683224D2BF381E5006F9BD4 /* JournalProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalProApp.swift; sourceTree = "<group>"; };
-		4683224F2BF381E5006F9BD4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		468322512BF381E6006F9BD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		468322542BF381E6006F9BD4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4683225A2BF381E6006F9BD4 /* JournalProTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JournalProTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,7 +141,6 @@
 		468322772BF38219006F9BD4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4683224F2BF381E5006F9BD4 /* ContentView.swift */,
 				468322822BF387BF006F9BD4 /* Client */,
 			);
 			path = Views;
@@ -329,7 +326,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				468322802BF382ED006F9BD4 /* ClientController.swift in Sources */,
-				468322502BF381E5006F9BD4 /* ContentView.swift in Sources */,
 				4683224E2BF381E5006F9BD4 /* JournalProApp.swift in Sources */,
 				468322842BF387D4006F9BD4 /* CreateClientView.swift in Sources */,
 				4683227E2BF3826F006F9BD4 /* ClientModel.xcdatamodeld in Sources */,
