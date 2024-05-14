@@ -14,6 +14,7 @@
 		4683225F2BF381E6006F9BD4 /* JournalProTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683225E2BF381E6006F9BD4 /* JournalProTests.swift */; };
 		468322692BF381E6006F9BD4 /* JournalProUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468322682BF381E6006F9BD4 /* JournalProUITests.swift */; };
 		4683226B2BF381E6006F9BD4 /* JournalProUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683226A2BF381E6006F9BD4 /* JournalProUITestsLaunchTests.swift */; };
+		4683227E2BF3826F006F9BD4 /* ClientModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4683227C2BF3826F006F9BD4 /* ClientModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		468322642BF381E6006F9BD4 /* JournalProUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JournalProUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		468322682BF381E6006F9BD4 /* JournalProUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalProUITests.swift; sourceTree = "<group>"; };
 		4683226A2BF381E6006F9BD4 /* JournalProUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalProUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4683227D2BF3826F006F9BD4 /* ClientModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClientModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,11 @@
 		468322412BF381E5006F9BD4 = {
 			isa = PBXGroup;
 			children = (
+				4683227B2BF3823D006F9BD4 /* App */,
+				4683227A2BF38233006F9BD4 /* CoreData */,
+				468322792BF3822D006F9BD4 /* Model */,
+				468322782BF38222006F9BD4 /* ViewModel */,
+				468322772BF38219006F9BD4 /* Views */,
 				4683224C2BF381E5006F9BD4 /* JournalPro */,
 				4683225D2BF381E6006F9BD4 /* JournalProTests */,
 				468322672BF381E6006F9BD4 /* JournalProUITests */,
@@ -94,8 +101,6 @@
 		4683224C2BF381E5006F9BD4 /* JournalPro */ = {
 			isa = PBXGroup;
 			children = (
-				4683224D2BF381E5006F9BD4 /* JournalProApp.swift */,
-				4683224F2BF381E5006F9BD4 /* ContentView.swift */,
 				468322512BF381E6006F9BD4 /* Assets.xcassets */,
 				468322532BF381E6006F9BD4 /* Preview Content */,
 			);
@@ -125,6 +130,44 @@
 				4683226A2BF381E6006F9BD4 /* JournalProUITestsLaunchTests.swift */,
 			);
 			path = JournalProUITests;
+			sourceTree = "<group>";
+		};
+		468322772BF38219006F9BD4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4683224F2BF381E5006F9BD4 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		468322782BF38222006F9BD4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		468322792BF3822D006F9BD4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4683227A2BF38233006F9BD4 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				4683227C2BF3826F006F9BD4 /* ClientModel.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		4683227B2BF3823D006F9BD4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4683224D2BF381E5006F9BD4 /* JournalProApp.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +302,7 @@
 			files = (
 				468322502BF381E5006F9BD4 /* ContentView.swift in Sources */,
 				4683224E2BF381E5006F9BD4 /* JournalProApp.swift in Sources */,
+				4683227E2BF3826F006F9BD4 /* ClientModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +627,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4683227C2BF3826F006F9BD4 /* ClientModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4683227D2BF3826F006F9BD4 /* ClientModel.xcdatamodel */,
+			);
+			currentVersion = 4683227D2BF3826F006F9BD4 /* ClientModel.xcdatamodel */;
+			path = ClientModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 468322422BF381E5006F9BD4 /* Project object */;
 }
