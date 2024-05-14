@@ -16,6 +16,7 @@
 		4683226B2BF381E6006F9BD4 /* JournalProUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683226A2BF381E6006F9BD4 /* JournalProUITestsLaunchTests.swift */; };
 		4683227E2BF3826F006F9BD4 /* ClientModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4683227C2BF3826F006F9BD4 /* ClientModel.xcdatamodeld */; };
 		468322802BF382ED006F9BD4 /* ClientController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683227F2BF382ED006F9BD4 /* ClientController.swift */; };
+		468322842BF387D4006F9BD4 /* CreateClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468322832BF387D4006F9BD4 /* CreateClientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		4683226A2BF381E6006F9BD4 /* JournalProUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalProUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4683227D2BF3826F006F9BD4 /* ClientModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClientModel.xcdatamodel; sourceTree = "<group>"; };
 		4683227F2BF382ED006F9BD4 /* ClientController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientController.swift; sourceTree = "<group>"; };
+		468322832BF387D4006F9BD4 /* CreateClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				4683224F2BF381E5006F9BD4 /* ContentView.swift */,
+				468322822BF387BF006F9BD4 /* Client */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,6 +182,14 @@
 				4683227F2BF382ED006F9BD4 /* ClientController.swift */,
 			);
 			path = DataController;
+			sourceTree = "<group>";
+		};
+		468322822BF387BF006F9BD4 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				468322832BF387D4006F9BD4 /* CreateClientView.swift */,
+			);
+			path = Client;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +325,7 @@
 				468322802BF382ED006F9BD4 /* ClientController.swift in Sources */,
 				468322502BF381E5006F9BD4 /* ContentView.swift in Sources */,
 				4683224E2BF381E5006F9BD4 /* JournalProApp.swift in Sources */,
+				468322842BF387D4006F9BD4 /* CreateClientView.swift in Sources */,
 				4683227E2BF3826F006F9BD4 /* ClientModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

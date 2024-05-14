@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct JournalProApp: App {
+    let clientController = ClientController()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, clientController.container.viewContext)
         }
     }
 }
