@@ -17,6 +17,8 @@
 		4683227E2BF3826F006F9BD4 /* ClientModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4683227C2BF3826F006F9BD4 /* ClientModel.xcdatamodeld */; };
 		468322802BF382ED006F9BD4 /* ClientController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683227F2BF382ED006F9BD4 /* ClientController.swift */; };
 		468322842BF387D4006F9BD4 /* CreateClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468322832BF387D4006F9BD4 /* CreateClientView.swift */; };
+		468322862BF38A16006F9BD4 /* ClientListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468322852BF38A16006F9BD4 /* ClientListView.swift */; };
+		4683228C2BF38C64006F9BD4 /* ClientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683228B2BF38C64006F9BD4 /* ClientDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		4683227D2BF3826F006F9BD4 /* ClientModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClientModel.xcdatamodel; sourceTree = "<group>"; };
 		4683227F2BF382ED006F9BD4 /* ClientController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientController.swift; sourceTree = "<group>"; };
 		468322832BF387D4006F9BD4 /* CreateClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClientView.swift; sourceTree = "<group>"; };
+		468322852BF38A16006F9BD4 /* ClientListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientListView.swift; sourceTree = "<group>"; };
+		4683228B2BF38C64006F9BD4 /* ClientDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +192,8 @@
 			isa = PBXGroup;
 			children = (
 				468322832BF387D4006F9BD4 /* CreateClientView.swift */,
+				4683228B2BF38C64006F9BD4 /* ClientDetailView.swift */,
+				468322852BF38A16006F9BD4 /* ClientListView.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -327,6 +333,8 @@
 				4683224E2BF381E5006F9BD4 /* JournalProApp.swift in Sources */,
 				468322842BF387D4006F9BD4 /* CreateClientView.swift in Sources */,
 				4683227E2BF3826F006F9BD4 /* ClientModel.xcdatamodeld in Sources */,
+				4683228C2BF38C64006F9BD4 /* ClientDetailView.swift in Sources */,
+				468322862BF38A16006F9BD4 /* ClientListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
