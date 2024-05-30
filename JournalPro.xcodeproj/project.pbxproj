@@ -13,6 +13,8 @@
 		462732052C08AE910063524D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 462732042C08AE910063524D /* FirebaseAuth */; };
 		462732072C08AE990063524D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 462732062C08AE990063524D /* FirebaseStorage */; };
 		4627320B2C08AFAD0063524D /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4627320A2C08AFAD0063524D /* InputView.swift */; };
+		4627320E2C08B1A90063524D /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4627320D2C08B1A90063524D /* AuthManager.swift */; };
+		462732102C08B2930063524D /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4627320F2C08B2930063524D /* AppUser.swift */; };
 		4683224E2BF381E5006F9BD4 /* JournalProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683224D2BF381E5006F9BD4 /* JournalProApp.swift */; };
 		468322522BF381E6006F9BD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468322512BF381E6006F9BD4 /* Assets.xcassets */; };
 		468322552BF381E6006F9BD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468322542BF381E6006F9BD4 /* Preview Assets.xcassets */; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		462731FC2C08ADB80063524D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4627320A2C08AFAD0063524D /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		4627320D2C08B1A90063524D /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		4627320F2C08B2930063524D /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		4683224A2BF381E5006F9BD4 /* JournalPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournalPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4683224D2BF381E5006F9BD4 /* JournalProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalProApp.swift; sourceTree = "<group>"; };
 		468322512BF381E6006F9BD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,12 +117,21 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		4627320C2C08B1660063524D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				4627320D2C08B1A90063524D /* AuthManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		468322412BF381E5006F9BD4 = {
 			isa = PBXGroup;
 			children = (
 				4683227B2BF3823D006F9BD4 /* App */,
-				4683227A2BF38233006F9BD4 /* CoreData */,
 				462732092C08AF920063524D /* Components */,
+				4683227A2BF38233006F9BD4 /* CoreData */,
+				4627320C2C08B1660063524D /* Manager */,
 				468322792BF3822D006F9BD4 /* Model */,
 				468322782BF38222006F9BD4 /* ViewModel */,
 				468322772BF38219006F9BD4 /* Views */,
@@ -193,6 +206,7 @@
 		468322792BF3822D006F9BD4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4627320F2C08B2930063524D /* AppUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -374,9 +388,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				468322802BF382ED006F9BD4 /* ClientController.swift in Sources */,
+				4627320E2C08B1A90063524D /* AuthManager.swift in Sources */,
 				4627320B2C08AFAD0063524D /* InputView.swift in Sources */,
 				4683224E2BF381E5006F9BD4 /* JournalProApp.swift in Sources */,
 				468322842BF387D4006F9BD4 /* CreateClientView.swift in Sources */,
+				462732102C08B2930063524D /* AppUser.swift in Sources */,
 				4683227E2BF3826F006F9BD4 /* ClientModel.xcdatamodeld in Sources */,
 				4683228C2BF38C64006F9BD4 /* ClientDetailView.swift in Sources */,
 				468322862BF38A16006F9BD4 /* ClientListView.swift in Sources */,
