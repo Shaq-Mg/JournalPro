@@ -15,6 +15,7 @@
 		4627320B2C08AFAD0063524D /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4627320A2C08AFAD0063524D /* InputView.swift */; };
 		4627320E2C08B1A90063524D /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4627320D2C08B1A90063524D /* AuthManager.swift */; };
 		462732102C08B2930063524D /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4627320F2C08B2930063524D /* AppUser.swift */; };
+		462732122C08B50C0063524D /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462732112C08B50C0063524D /* SignInViewModel.swift */; };
 		4683224E2BF381E5006F9BD4 /* JournalProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683224D2BF381E5006F9BD4 /* JournalProApp.swift */; };
 		468322522BF381E6006F9BD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468322512BF381E6006F9BD4 /* Assets.xcassets */; };
 		468322552BF381E6006F9BD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468322542BF381E6006F9BD4 /* Preview Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		4627320A2C08AFAD0063524D /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		4627320D2C08B1A90063524D /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		4627320F2C08B2930063524D /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
+		462732112C08B50C0063524D /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		4683224A2BF381E5006F9BD4 /* JournalPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournalPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4683224D2BF381E5006F9BD4 /* JournalProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalProApp.swift; sourceTree = "<group>"; };
 		468322512BF381E6006F9BD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		468322782BF38222006F9BD4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				462732112C08B50C0063524D /* SignInViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				4627320E2C08B1A90063524D /* AuthManager.swift in Sources */,
 				4627320B2C08AFAD0063524D /* InputView.swift in Sources */,
 				4683224E2BF381E5006F9BD4 /* JournalProApp.swift in Sources */,
+				462732122C08B50C0063524D /* SignInViewModel.swift in Sources */,
 				468322842BF387D4006F9BD4 /* CreateClientView.swift in Sources */,
 				462732102C08B2930063524D /* AppUser.swift in Sources */,
 				4683227E2BF3826F006F9BD4 /* ClientModel.xcdatamodeld in Sources */,
