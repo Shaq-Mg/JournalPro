@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		462731FD2C08ADB80063524D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 462731FC2C08ADB80063524D /* GoogleService-Info.plist */; };
+		462732012C08AE800063524D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 462732002C08AE800063524D /* FirebaseFirestore */; };
+		462732032C08AE8A0063524D /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 462732022C08AE8A0063524D /* FirebaseFirestoreSwift */; };
+		462732052C08AE910063524D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 462732042C08AE910063524D /* FirebaseAuth */; };
+		462732072C08AE990063524D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 462732062C08AE990063524D /* FirebaseStorage */; };
 		4683224E2BF381E5006F9BD4 /* JournalProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683224D2BF381E5006F9BD4 /* JournalProApp.swift */; };
 		468322522BF381E6006F9BD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468322512BF381E6006F9BD4 /* Assets.xcassets */; };
 		468322552BF381E6006F9BD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468322542BF381E6006F9BD4 /* Preview Assets.xcassets */; };
@@ -38,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		462731FC2C08ADB80063524D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4683224A2BF381E5006F9BD4 /* JournalPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournalPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4683224D2BF381E5006F9BD4 /* JournalProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalProApp.swift; sourceTree = "<group>"; };
 		468322512BF381E6006F9BD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +65,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				462732012C08AE800063524D /* FirebaseFirestore in Frameworks */,
+				462732072C08AE990063524D /* FirebaseStorage in Frameworks */,
+				462732052C08AE910063524D /* FirebaseAuth in Frameworks */,
+				462732032C08AE8A0063524D /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +89,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		462731FF2C08AE800063524D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		468322412BF381E5006F9BD4 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +108,7 @@
 				4683225D2BF381E6006F9BD4 /* JournalProTests */,
 				468322672BF381E6006F9BD4 /* JournalProUITests */,
 				4683224B2BF381E5006F9BD4 /* Products */,
+				462731FF2C08AE800063524D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,6 +190,7 @@
 		4683227B2BF3823D006F9BD4 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				462731FC2C08ADB80063524D /* GoogleService-Info.plist */,
 				4683224D2BF381E5006F9BD4 /* JournalProApp.swift */,
 			);
 			path = App;
@@ -211,6 +230,12 @@
 			dependencies = (
 			);
 			name = JournalPro;
+			packageProductDependencies = (
+				462732002C08AE800063524D /* FirebaseFirestore */,
+				462732022C08AE8A0063524D /* FirebaseFirestoreSwift */,
+				462732042C08AE910063524D /* FirebaseAuth */,
+				462732062C08AE990063524D /* FirebaseStorage */,
+			);
 			productName = JournalPro;
 			productReference = 4683224A2BF381E5006F9BD4 /* JournalPro.app */;
 			productType = "com.apple.product-type.application";
@@ -283,6 +308,9 @@
 				Base,
 			);
 			mainGroup = 468322412BF381E5006F9BD4;
+			packageReferences = (
+				462731FE2C08AE6E0063524D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 4683224B2BF381E5006F9BD4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -301,6 +329,7 @@
 			files = (
 				468322552BF381E6006F9BD4 /* Preview Assets.xcassets in Resources */,
 				468322522BF381E6006F9BD4 /* Assets.xcassets in Resources */,
+				462731FD2C08ADB80063524D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,6 +684,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		462731FE2C08AE6E0063524D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		462732002C08AE800063524D /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 462731FE2C08AE6E0063524D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		462732022C08AE8A0063524D /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 462731FE2C08AE6E0063524D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		462732042C08AE910063524D /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 462731FE2C08AE6E0063524D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		462732062C08AE990063524D /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 462731FE2C08AE6E0063524D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		4683227C2BF3826F006F9BD4 /* ClientModel.xcdatamodeld */ = {
