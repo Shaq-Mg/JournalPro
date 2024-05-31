@@ -29,6 +29,9 @@
 		468322862BF38A16006F9BD4 /* ClientListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468322852BF38A16006F9BD4 /* ClientListView.swift */; };
 		4683228C2BF38C64006F9BD4 /* ClientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683228B2BF38C64006F9BD4 /* ClientDetailView.swift */; };
 		46E1E7802C0A50DD00522BD4 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1E77F2C0A50DD00522BD4 /* SignInView.swift */; };
+		46E1E7822C0A54F100522BD4 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1E7812C0A54F100522BD4 /* Appointment.swift */; };
+		46E1E7842C0A550A00522BD4 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1E7832C0A550A00522BD4 /* Service.swift */; };
+		46E1E7862C0A554900522BD4 /* FirebaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1E7852C0A554900522BD4 /* FirebaseConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,9 @@
 		468322852BF38A16006F9BD4 /* ClientListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientListView.swift; sourceTree = "<group>"; };
 		4683228B2BF38C64006F9BD4 /* ClientDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDetailView.swift; sourceTree = "<group>"; };
 		46E1E77F2C0A50DD00522BD4 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		46E1E7812C0A54F100522BD4 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
+		46E1E7832C0A550A00522BD4 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		46E1E7852C0A554900522BD4 /* FirebaseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,7 +221,10 @@
 		468322792BF3822D006F9BD4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				46E1E7812C0A54F100522BD4 /* Appointment.swift */,
 				4627320F2C08B2930063524D /* AppUser.swift */,
+				46E1E7832C0A550A00522BD4 /* Service.swift */,
+				46E1E7852C0A554900522BD4 /* FirebaseConstants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -396,12 +405,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46E1E7822C0A54F100522BD4 /* Appointment.swift in Sources */,
+				46E1E7842C0A550A00522BD4 /* Service.swift in Sources */,
 				468322802BF382ED006F9BD4 /* ClientController.swift in Sources */,
 				4627320E2C08B1A90063524D /* AuthManager.swift in Sources */,
 				4627320B2C08AFAD0063524D /* InputView.swift in Sources */,
 				4683224E2BF381E5006F9BD4 /* JournalProApp.swift in Sources */,
 				462732122C08B50C0063524D /* SignInViewModel.swift in Sources */,
 				468322842BF387D4006F9BD4 /* CreateClientView.swift in Sources */,
+				46E1E7862C0A554900522BD4 /* FirebaseConstants.swift in Sources */,
 				46E1E7802C0A50DD00522BD4 /* SignInView.swift in Sources */,
 				462732102C08B2930063524D /* AppUser.swift in Sources */,
 				4683227E2BF3826F006F9BD4 /* ClientModel.xcdatamodeld in Sources */,
