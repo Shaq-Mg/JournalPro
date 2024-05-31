@@ -12,7 +12,7 @@ final class AuthManager {
     
     let auth = Auth.auth()
     
-    private init() { }
+    init() { }
     
     func getAuthenticatedUser() throws -> AppUser {
         guard let user = auth.currentUser else {

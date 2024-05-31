@@ -28,6 +28,7 @@
 		468322842BF387D4006F9BD4 /* CreateClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468322832BF387D4006F9BD4 /* CreateClientView.swift */; };
 		468322862BF38A16006F9BD4 /* ClientListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468322852BF38A16006F9BD4 /* ClientListView.swift */; };
 		4683228C2BF38C64006F9BD4 /* ClientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683228B2BF38C64006F9BD4 /* ClientDetailView.swift */; };
+		46E1E7802C0A50DD00522BD4 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1E77F2C0A50DD00522BD4 /* SignInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		468322832BF387D4006F9BD4 /* CreateClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClientView.swift; sourceTree = "<group>"; };
 		468322852BF38A16006F9BD4 /* ClientListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientListView.swift; sourceTree = "<group>"; };
 		4683228B2BF38C64006F9BD4 /* ClientDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDetailView.swift; sourceTree = "<group>"; };
+		46E1E77F2C0A50DD00522BD4 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		462732082C08AF800063524D /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				46E1E77F2C0A50DD00522BD4 /* SignInView.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				4683224E2BF381E5006F9BD4 /* JournalProApp.swift in Sources */,
 				462732122C08B50C0063524D /* SignInViewModel.swift in Sources */,
 				468322842BF387D4006F9BD4 /* CreateClientView.swift in Sources */,
+				46E1E7802C0A50DD00522BD4 /* SignInView.swift in Sources */,
 				462732102C08B2930063524D /* AppUser.swift in Sources */,
 				4683227E2BF3826F006F9BD4 /* ClientModel.xcdatamodeld in Sources */,
 				462732142C08BB710063524D /* SettingsViewModel.swift in Sources */,

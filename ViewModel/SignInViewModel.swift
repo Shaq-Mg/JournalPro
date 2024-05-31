@@ -11,6 +11,7 @@ import FirebaseAuth
 final class SignInViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
+    @Published var loginStatusMessage = ""
     
     let authManager: AuthManager
     
