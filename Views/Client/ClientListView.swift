@@ -9,13 +9,12 @@ import SwiftUI
 
 struct ClientListView: View {
     @State private var isShowNewClient = false
-    @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.firstName, order: .forward)]) var clients: FetchedResults<Client>
+    @ObservedObject var vm: ClientViewModel
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(clients) { client in
+                ForEach(vm.clients) { client in
                     ZStack(alignment: .leading) {
                         NavigationLink(destination: ClientDetailView(client: client)) {
                             EmptyView()
@@ -55,15 +54,14 @@ struct ClientListView: View {
     }
     private func delete(offsets: IndexSet) {
         withAnimation {
-            offsets.map { _ in clients[0] }.forEach(moc.delete)
-            ClientController().save(context: moc)
+
         }
     }
 }
 
 struct ClientListView_Previews: PreviewProvider {
     static var previews: some View {
-        ClientListView()
+        ClientListView(vm: ClientViewModel())
     }
 }
 
@@ -75,17 +73,13 @@ struct ClientRowView: View {
                 .frame(width: 35, height: 35)
                 .foregroundStyle(.secondary)
                 .overlay {
-                    Text((client.firstName?.prefix(1).capitalized ?? ""))
+                    Text((client.name.prefix(1).capitalized))
                         .font(.title3.bold())
                         .foregroundStyle(.white)
                 }
             VStack(alignment: .leading, spacing: 6) {
-                Text(client.firstName ?? "")
+                Text(client.name)
                     .font(.system(size: 18, design: .rounded).bold())
-                
-                Text(client.lastName ?? "")
-                    .font(.caption.bold())
-                    .foregroundStyle(.secondary)
             }
             Spacer()
             if client.isFavourite {

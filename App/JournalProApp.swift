@@ -20,12 +20,10 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct JournalProApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    let clientController = ClientController()
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                ClientListView()
-                    .environment(\.managedObjectContext, clientController.container.viewContext)
+                ClientListView(vm: ClientViewModel())
             }
         }
     }

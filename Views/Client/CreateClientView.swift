@@ -8,30 +8,22 @@
 import SwiftUI
 
 struct CreateClientView: View {
-    @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) private var dismiss
-    @State private var firstName = ""
-    @State private var lastName = ""
-    @State private var phoneNumber = ""
-    @State private var notes = ""
-    @State private var isFavourite = false
+    @ObservedObject var vm = ClientViewModel()
     var body: some View {
         List {
             Section("General") {
-                TextField("First name", text: $firstName)
+                TextField("Name", text: $vm.name)
                     .keyboardType(.namePhonePad)
                 
-                TextField("Last name", text: $lastName)
-                    .keyboardType(.namePhonePad)
-                
-                TextField("Phone number", text: $phoneNumber)
+                TextField("Phone number", text: $vm.phoneNumber)
                 .keyboardType(.phonePad)
                 
-                Toggle("Favourite", isOn: $isFavourite)
+                Toggle("Favourite", isOn: $vm.isFavourite)
             }
             
             Section("Notes") {
-                TextField("Add description", text: $notes)
+                TextField("Add description", text: $vm.notes)
             }
         }
         .navigationBarTitle("Create Client")
@@ -44,8 +36,7 @@ struct CreateClientView: View {
             
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("Done") {
-                        ClientController().addClient(firstName: firstName, lastName: lastName, phoneNumber: phoneNumber, isFavorite: isFavourite, notes: notes, context: moc)
-                        dismiss()
+
                 }
             }
         }
