@@ -12,13 +12,14 @@ struct CreateClientView: View {
     @ObservedObject var vm = ClientViewModel()
     var body: some View {
         ZStack {
-            Color.secondary.opacity(0.6).ignoresSafeArea()
-            VStack(spacing: 14) {
+            Color.indigo.opacity(0.5).ignoresSafeArea()
+            VStack(spacing: 16) {
                 InputView(text: $vm.name, title: "Name", placeholder: "Name")
                 InputView(text: $vm.phoneNumber, title: "Phone number", placeholder: "Phone number")
                 InputView(text: $vm.notes, title: "Notes", placeholder: "Notes")
                 VStack(spacing: 18) {
                     Toggle("Favourite", isOn: $vm.isFavourite)
+                        .tint(.indigo)
                     Divider()
                     
                     Button {
@@ -26,6 +27,7 @@ struct CreateClientView: View {
                     } label: {
                         Text("Save")
                     }
+                    .font(.headline)
                 }
                 .padding()
                 .frame(maxWidth: .infinity)
@@ -36,11 +38,13 @@ struct CreateClientView: View {
             }
             .padding(.horizontal)
             .navigationBarTitle("Create Client")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cancel") {
                         dismiss()
                     }
+                    .foregroundStyle(.black)
                 }
             }
         .fontWeight(.semibold)
