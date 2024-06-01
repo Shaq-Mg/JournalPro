@@ -8,7 +8,7 @@
 import Foundation
 
 struct Client: Identifiable, Codable {
-    var id = UUID()
+    var id: String
     let name, phoneNumber: String
     let notes: String?
     let isFavourite: Bool

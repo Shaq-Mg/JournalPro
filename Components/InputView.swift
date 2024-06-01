@@ -36,7 +36,7 @@ struct InputView: View {
             .background(.white)
             .cornerRadius(20)
             .overlay(RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 1).foregroundStyle(.secondary))
-            .shadow(radius: 5)
+            .shadow(radius: 4)
         }
     }
 }

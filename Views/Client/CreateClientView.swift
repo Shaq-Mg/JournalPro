@@ -11,36 +11,40 @@ struct CreateClientView: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject var vm = ClientViewModel()
     var body: some View {
-        List {
-            Section("General") {
-                TextField("Name", text: $vm.name)
-                    .keyboardType(.namePhonePad)
-                
-                TextField("Phone number", text: $vm.phoneNumber)
-                .keyboardType(.phonePad)
-                
-                Toggle("Favourite", isOn: $vm.isFavourite)
+        ZStack {
+            Color.secondary.opacity(0.6).ignoresSafeArea()
+            VStack(spacing: 14) {
+                InputView(text: $vm.name, title: "Name", placeholder: "Name")
+                InputView(text: $vm.phoneNumber, title: "Phone number", placeholder: "Phone number")
+                InputView(text: $vm.notes, title: "Notes", placeholder: "Notes")
+                VStack(spacing: 18) {
+                    Toggle("Favourite", isOn: $vm.isFavourite)
+                    Divider()
+                    
+                    Button {
+                        vm.addClient(name: vm.name, phoneNumber: vm.phoneNumber, notes: vm.notes, isFavourite: vm.isFavourite)
+                    } label: {
+                        Text("Save")
+                    }
+                }
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(.white)
+                .cornerRadius(20)
+                .overlay(RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 1).foregroundStyle(.secondary))
+                .shadow(radius: 5)
             }
-            
-            Section("Notes") {
-                TextField("Add description", text: $vm.notes)
-            }
-        }
-        .navigationBarTitle("Create Client")
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button("Cancel") {
-                    dismiss()
+            .padding(.horizontal)
+            .navigationBarTitle("Create Client")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Cancel") {
+                        dismiss()
+                    }
                 }
             }
-            
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button("Done") {
-
-                }
-            }
-        }
         .fontWeight(.semibold)
+        }
     }
 }
 

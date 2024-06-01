@@ -19,6 +19,6 @@ struct ClientDetailView: View {
 }
 struct ClientDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ClientDetailView(client: Client(name: "User", phoneNumber: "07900000000", notes: "none", isFavourite: true))
+        ClientDetailView(client: Client(id: "12", name: "User", phoneNumber: "07900000000", notes: "none", isFavourite: true))
     }
 }
