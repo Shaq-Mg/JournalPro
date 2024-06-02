@@ -23,7 +23,7 @@ struct CreateClientView: View {
                     Divider()
                     
                     Button {
-                        vm.addClient(name: vm.name, phoneNumber: vm.phoneNumber, notes: vm.notes, isFavourite: vm.isFavourite)
+                        vm.saveClient(name: vm.name, phoneNumber: vm.phoneNumber, notes: vm.notes, isFavourite: vm.isFavourite)
                         dismiss()
                     } label: {
                         Text("Save")

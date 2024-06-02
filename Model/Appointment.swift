@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift
 
 struct Appointment: Identifiable, Codable {
     @DocumentID var id: String?
-    let name: String
+    let name: String?
     let service: Service
     let client: Client?
     let date: Date

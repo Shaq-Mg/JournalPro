@@ -7,20 +7,22 @@
 
 import SwiftUI
 
-struct ClientListView: View {
+struct ClientView: View {
     @State private var isShowNewClient = false
     @StateObject var vm = ClientViewModel()
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(vm.clients) { client in
-                    ZStack(alignment: .leading) {
-                        NavigationLink(destination: ClientDetailView(vm: vm, client: client)) {
-                            EmptyView()
+                Section("Clients") {
+                    ForEach(vm.clients) { client in
+                        ZStack(alignment: .leading) {
+                            NavigationLink(destination: ClientDetailView(vm: vm, client: client)) {
+                                EmptyView()
+                            }
+                            .opacity(0)
+                            ClientRowView(client: client)
                         }
-                        .opacity(0)
-                        ClientRowView(client: client)
                     }
                 }
             }
@@ -31,9 +33,6 @@ struct ClientListView: View {
                     CreateClientView()
                 }
             })
-            .navigationTitle("Clients")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
@@ -53,13 +52,13 @@ struct ClientListView: View {
             }
             .font(.title2)
             .fontWeight(.semibold)
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 
-struct ClientListView_Previews: PreviewProvider {
+struct ClientView_Previews: PreviewProvider {
     static var previews: some View {
-        ClientListView()
+        ClientView()
     }
 }
 

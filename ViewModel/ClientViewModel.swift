@@ -34,7 +34,7 @@ final class ClientViewModel: ObservableObject {
         }
     }
     
-    func addClient(name: String, phoneNumber: String, notes: String?, isFavourite: Bool) {
+    func saveClient(name: String, phoneNumber: String, notes: String?, isFavourite: Bool) {
         db.collection("clients")
             .addDocument(data: ["name": name, "phone_number": phoneNumber, "notes": notes ?? "-", "is_favourite": isFavourite]) { error in
                 if error == nil {
@@ -42,7 +42,7 @@ final class ClientViewModel: ObservableObject {
                     print("Successfully to saved client to firestore")
                 } else {
                     // handle error here
-                    print("Unable to save client to firestore")
+                    print("Failed to save client to firestore")
                 }
             }
     }
@@ -63,6 +63,7 @@ final class ClientViewModel: ObservableObject {
                 }
             } else {
                 // handle error here
+                print("Failed to delete client to firestore")
             }
         }
     }

@@ -23,7 +23,7 @@ struct JournalProApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                ClientListView(vm: ClientViewModel())
+                ClientView(vm: ClientViewModel())
             }
         }
     }
