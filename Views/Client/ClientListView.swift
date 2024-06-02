@@ -9,28 +9,31 @@ import SwiftUI
 
 struct ClientListView: View {
     @State private var isShowNewClient = false
-    @ObservedObject var vm: ClientViewModel
+    @StateObject var vm = ClientViewModel()
     
     var body: some View {
         NavigationStack {
             List {
                 ForEach(vm.clients) { client in
                     ZStack(alignment: .leading) {
-                        NavigationLink(destination: ClientDetailView(client: client)) {
+                        NavigationLink(destination: ClientDetailView(vm: vm, client: client)) {
                             EmptyView()
                         }
                         .opacity(0)
                         ClientRowView(client: client)
                     }
                 }
-                .onDelete(perform: delete)
             }
+            .searchable(text: $vm.searchText, prompt: "Search")
+            .onAppear { vm.fetchClients() }
             .sheet(isPresented: $isShowNewClient, content: {
                 NavigationStack {
                     CreateClientView()
                 }
             })
             .navigationTitle("Clients")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
@@ -52,16 +55,11 @@ struct ClientListView: View {
             .fontWeight(.semibold)
         }
     }
-    private func delete(offsets: IndexSet) {
-        withAnimation {
-
-        }
-    }
 }
 
 struct ClientListView_Previews: PreviewProvider {
     static var previews: some View {
-        ClientListView(vm: ClientViewModel())
+        ClientListView()
     }
 }
 

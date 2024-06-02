@@ -24,6 +24,7 @@ struct CreateClientView: View {
                     
                     Button {
                         vm.addClient(name: vm.name, phoneNumber: vm.phoneNumber, notes: vm.notes, isFavourite: vm.isFavourite)
+                        dismiss()
                     } label: {
                         Text("Save")
                     }
