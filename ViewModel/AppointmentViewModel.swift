@@ -10,19 +10,15 @@ import Firebase
 
 final class AppointmentViewModel: ObservableObject {
     @Published var appointments = [Appointment]()
-    @Published var searchText = ""
+    @Published var clients = [Client]()
+    @Published var services = [Service]()
     @Published var name = ""
-    @Published var date: Date
-    @Published var client: Client?
-    @Published var service: Service?
+    @Published var selectedDate = Date()
+    @Published var selectedClient: Client? = nil
+    @Published var selectedService: Service? = nil
     
     let db = Firestore.firestore()
-    
-    init(date: Date, client: Client?, service: Service?) {
-        self.date = date
-        self.client = client
-        self.service = service
-    }
+
     
     func fetchAppointments() {
         db.collection("appointments").getDocuments { snapshot, error in
@@ -30,7 +26,7 @@ final class AppointmentViewModel: ObservableObject {
                 if let snapshot = snapshot {
                     DispatchQueue.main.async {
                         self.appointments = snapshot.documents.map({ doc in
-                            return Appointment(name: doc["name"] as? String ?? "n/a", service: Service(title: doc["title"] as? String ?? "n/a", price: doc["price"] as? String ?? "n/a"), client: Client(id: doc.documentID, name: doc["name"] as? String ?? "n/a", phoneNumber: doc["phone_number"] as? String ?? "n/a", notes: doc["notes"] as? String ?? "n/a", isFavourite: doc["is_favourite"] as? Bool ?? false), date: doc["date"] as? Date ?? Date())
+                            return Appointment(name: doc["name"] as? String ?? "n/a", service: Service(title: doc["title"] as? String ?? "n/a", price: doc["price"] as? String ?? "n/a", duration: doc["duration"] as? Int ?? 0), client: Client(id: doc.documentID, name: doc["name"] as? String ?? "n/a", phoneNumber: doc["phone_number"] as? String ?? "n/a", notes: doc["notes"] as? String ?? "n/a", isFavourite: doc["is_favourite"] as? Bool ?? false), date: doc["date"] as? Date ?? Date())
                         })
                     }
                 }
@@ -70,6 +66,22 @@ final class AppointmentViewModel: ObservableObject {
             } else {
                 // handle error here
                 print("Failed to delete appointment to firestore")
+            }
+        }
+    }
+    
+    func fetchClients() {
+        db.collection("clients").getDocuments { snapshot, error in
+            if error == nil {
+                if let snapshot = snapshot {
+                    DispatchQueue.main.async {
+                        self.clients = snapshot.documents.map({ doc in
+                            return Client(id: doc.documentID, name: doc["name"] as? String ?? "n/a", phoneNumber: doc["phone_number"] as? String ?? "n/a", notes: doc["notes"] as? String ?? "-", isFavourite: doc["is_favourite"] as? Bool ?? false)
+                        })
+                    }
+                }
+            } else {
+                // handle error here
             }
         }
     }

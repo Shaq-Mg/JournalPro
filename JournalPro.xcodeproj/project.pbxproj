@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		460CE6742C0CB297009AFA53 /* AppointmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460CE6732C0CB297009AFA53 /* AppointmentViewModel.swift */; };
+		460CE6772C0CC37E009AFA53 /* CreateAppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460CE6762C0CC37E009AFA53 /* CreateAppointmentView.swift */; };
 		46139D692C0A7C6D00EBFBD0 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46139D682C0A7C6D00EBFBD0 /* Client.swift */; };
 		46139D6B2C0A7D1300EBFBD0 /* ClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46139D6A2C0A7D1300EBFBD0 /* ClientViewModel.swift */; };
 		462731FD2C08ADB80063524D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 462731FC2C08ADB80063524D /* GoogleService-Info.plist */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		460CE6732C0CB297009AFA53 /* AppointmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentViewModel.swift; sourceTree = "<group>"; };
+		460CE6762C0CC37E009AFA53 /* CreateAppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAppointmentView.swift; sourceTree = "<group>"; };
 		46139D682C0A7C6D00EBFBD0 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		46139D6A2C0A7D1300EBFBD0 /* ClientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViewModel.swift; sourceTree = "<group>"; };
 		462731FC2C08ADB80063524D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -109,6 +111,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		460CE6752C0CC366009AFA53 /* Appointment */ = {
+			isa = PBXGroup;
+			children = (
+				460CE6762C0CC37E009AFA53 /* CreateAppointmentView.swift */,
+			);
+			path = Appointment;
+			sourceTree = "<group>";
+		};
 		462731FF2C08AE800063524D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +214,7 @@
 		468322772BF38219006F9BD4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				460CE6752C0CC366009AFA53 /* Appointment */,
 				462732082C08AF800063524D /* SignIn */,
 				468322822BF387BF006F9BD4 /* Client */,
 			);
@@ -405,6 +416,7 @@
 				46139D692C0A7C6D00EBFBD0 /* Client.swift in Sources */,
 				46E1E7802C0A50DD00522BD4 /* SignInView.swift in Sources */,
 				462732102C08B2930063524D /* AppUser.swift in Sources */,
+				460CE6772C0CC37E009AFA53 /* CreateAppointmentView.swift in Sources */,
 				462732142C08BB710063524D /* SettingsViewModel.swift in Sources */,
 				4683228C2BF38C64006F9BD4 /* ClientDetailView.swift in Sources */,
 				468322862BF38A16006F9BD4 /* ClientView.swift in Sources */,
