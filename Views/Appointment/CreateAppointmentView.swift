@@ -11,63 +11,63 @@ struct CreateAppointmentView: View {
     @StateObject var vm = AppointmentViewModel()
     
     var body: some View {
-        VStack(spacing: 16) {
-            VStack(alignment: .leading) {
-                Text("Name")
-                    .font(.callout)
-                TextField("Name (optional)", text: $vm.name)
-                    .font(.title2)
-                    .textFieldStyle(.roundedBorder)
-                    .frame(maxWidth: .infinity)
-            }
-            DatePicker("Select a date", selection: $vm.selectedDate)
-            Divider()
-            
-            VStack(alignment: .leading) {
-                Text("Select a client")
-                ScrollView(.horizontal) {
-                    HStack(spacing: 14) {
-                        ForEach(vm.clients) { client in
-                            Text(client.name)
-                                .padding(12)
-                                .overlay{ RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 1) }
-                                .padding(.vertical)
-                        }
-                    }
+        NavigationStack {
+            VStack(spacing: 16) {
+                VStack(alignment: .leading) {
+                    Text("Name")
+                        .font(.callout)
+                    TextField("Name (optional)", text: $vm.name)
+                        .font(.title2)
+                        .textFieldStyle(.roundedBorder)
+                        .frame(maxWidth: .infinity)
                 }
+                DatePicker("Select a date", selection: $vm.selectedDate)
                 Divider()
-                Text("Select a service")
-                ScrollView(.horizontal) {
-                    HStack(spacing: 14) {
-                        ForEach(vm.services) { service in
-                            if vm.services.isEmpty {
-                                Text("No services")
-                            } else {
-                                Text(service.title)
-                                    .padding(12)
-                                    .overlay{ RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 1) }
-                                    .padding(.vertical)
-                            }
-                        }
-                    }
-                }
-                Divider()
-            }
-
-            Button {
                 
-            } label: {
-                Text("Save").bold()
+                VStack(alignment: .leading) {
+                    NavigationLink {
+                        
+                    } label: {
+                        Text("Select client")
+                            .font(.system(size: 16, weight: .bold))
+                            .foregroundStyle(.white)
+                            .padding(12)
+                            .background(.indigo)
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                    }
+
+                    
+                    Divider()
+                    NavigationLink {
+                        
+                    } label: {
+                        Text("Select service")
+                            .font(.system(size: 16, weight: .bold))
+                            .foregroundStyle(.white)
+                            .padding(12)
+                            .background(.indigo)
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                    }
+                    Divider()
+                }
+                
+                Button {
+                    
+                } label: {
+                    Text("Confirm").bold()
+                }
             }
-            
+            .navigationTitle("Book appointment")
+            .onAppear{ vm.fetchClients() }
+            .padding(.horizontal)
         }
-        .onAppear{ vm.fetchClients() }
-        .padding(.horizontal)
     }
 }
 
 struct CreateAppointmentView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateAppointmentView()
+        NavigationStack {
+            CreateAppointmentView()
+        }
     }
 }

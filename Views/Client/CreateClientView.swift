@@ -16,14 +16,15 @@ struct CreateClientView: View {
             VStack(spacing: 16) {
                 InputView(text: $vm.name, title: "Name", placeholder: "Name")
                 InputView(text: $vm.phoneNumber, title: "Phone number", placeholder: "Phone number")
-                InputView(text: $vm.notes, title: "Notes", placeholder: "Notes")
+                InputView(text: $vm.nickname, title: "Nickname (optional)", placeholder: "Nickname (optional)")
+                InputView(text: $vm.notes, title: "Notes (optional)", placeholder: "Notes (optional)")
                 VStack(spacing: 18) {
                     Toggle("Favourite", isOn: $vm.isFavourite)
                         .tint(.indigo)
                     Divider()
                     
                     Button {
-                        vm.saveClient(name: vm.name, phoneNumber: vm.phoneNumber, notes: vm.notes, isFavourite: vm.isFavourite)
+                        vm.saveClient(name: vm.name, phoneNumber: vm.phoneNumber, nickname: vm.nickname, notes: vm.notes, isFavourite: vm.isFavourite)
                         dismiss()
                     } label: {
                         Text("Save")

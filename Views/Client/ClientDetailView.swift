@@ -28,10 +28,32 @@ struct ClientDetailView: View {
                     Text(client.name)
                         .font(.title2.bold())
                 }
-                Text(client.phoneNumber)
-                Text(client.notes ?? "n/a")
-                Text("Favourite: \(client.isFavourite.description)")
+                HStack {
+                    Text("Phone number:")
+                        .font(.callout)
+                        .foregroundStyle(.secondary)
+                    Text(client.phoneNumber)
+                }
+                HStack {
+                    Text("Nickname:")
+                        .font(.callout)
+                        .foregroundStyle(.secondary)
+                    Text(client.nickname ?? "n/a")
+                }
+                HStack {
+                    Text("Notes:")
+                        .font(.callout)
+                        .foregroundStyle(.secondary)
+                    Text(client.notes ?? "n/a")
+                }
+                HStack {
+                    Text("Favourite:")
+                        .font(.callout)
+                        .foregroundStyle(.secondary)
+                    Text("\(client.isFavourite.description)")
+                }
             }
+            .fontWeight(.semibold)
             Section("Update") {
                 Button {
                     showConfirmation = true
@@ -41,7 +63,7 @@ struct ClientDetailView: View {
                         Text("Delete")
                     }
                     .font(.headline)
-                    .foregroundStyle(.red)
+                    .foregroundStyle(.indigo)
                     .padding(.vertical)
                 }
             }
@@ -65,7 +87,7 @@ struct ClientDetailView: View {
 struct ClientDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            ClientDetailView(vm: ClientViewModel(), client: Client(id: "12", name: "User", phoneNumber: "07900000000", notes: "none", isFavourite: true))
+            ClientDetailView(vm: ClientViewModel(), client: Client(id: "12", name: "User", phoneNumber: "07900000000", nickname: "user123", notes: "none", isFavourite: true))
         }
     }
 }

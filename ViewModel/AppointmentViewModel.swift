@@ -14,8 +14,8 @@ final class AppointmentViewModel: ObservableObject {
     @Published var services = [Service]()
     @Published var name = ""
     @Published var selectedDate = Date()
-    @Published var selectedClient: Client? = nil
-    @Published var selectedService: Service? = nil
+    @Published var client: Client? = nil
+    @Published var service: Service? = nil
     
     let db = Firestore.firestore()
 
@@ -26,7 +26,7 @@ final class AppointmentViewModel: ObservableObject {
                 if let snapshot = snapshot {
                     DispatchQueue.main.async {
                         self.appointments = snapshot.documents.map({ doc in
-                            return Appointment(name: doc["name"] as? String ?? "n/a", service: Service(title: doc["title"] as? String ?? "n/a", price: doc["price"] as? String ?? "n/a", duration: doc["duration"] as? Int ?? 0), client: Client(id: doc.documentID, name: doc["name"] as? String ?? "n/a", phoneNumber: doc["phone_number"] as? String ?? "n/a", notes: doc["notes"] as? String ?? "n/a", isFavourite: doc["is_favourite"] as? Bool ?? false), date: doc["date"] as? Date ?? Date())
+                            return Appointment(name: doc["name"] as? String ?? "n/a", service: Service(title: doc["title"] as? String ?? "n/a", price: doc["price"] as? String ?? "n/a", duration: doc["duration"] as? Int ?? 0), client: Client(id: doc.documentID, name: doc["name"] as? String ?? "n/a", phoneNumber: doc["phone_number"] as? String ?? "n/a", nickname: doc["nickname"] as? String ?? "n/a", notes: doc["notes"] as? String ?? "n/a", isFavourite: doc["is_favourite"] as? Bool ?? false), date: doc["date"] as? Date ?? Date())
                         })
                     }
                 }
@@ -76,7 +76,7 @@ final class AppointmentViewModel: ObservableObject {
                 if let snapshot = snapshot {
                     DispatchQueue.main.async {
                         self.clients = snapshot.documents.map({ doc in
-                            return Client(id: doc.documentID, name: doc["name"] as? String ?? "n/a", phoneNumber: doc["phone_number"] as? String ?? "n/a", notes: doc["notes"] as? String ?? "-", isFavourite: doc["is_favourite"] as? Bool ?? false)
+                            return Client(id: doc.documentID, name: doc["name"] as? String ?? "n/a", phoneNumber: doc["phone_number"] as? String ?? "n/a", nickname: doc["nickname"] as? String ?? "n/a", notes: doc["notes"] as? String ?? "-", isFavourite: doc["is_favourite"] as? Bool ?? false)
                         })
                     }
                 }

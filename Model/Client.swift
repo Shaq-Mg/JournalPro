@@ -10,6 +10,6 @@ import Foundation
 struct Client: Identifiable, Codable {
     var id: String
     let name, phoneNumber: String
-    let notes: String?
+    let nickname, notes: String?
     let isFavourite: Bool
 }
