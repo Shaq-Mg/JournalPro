@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 import Firebase
 
 final class AppointmentViewModel: ObservableObject {
