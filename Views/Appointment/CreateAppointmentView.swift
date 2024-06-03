@@ -25,15 +25,26 @@ struct CreateAppointmentView: View {
                 Divider()
                 
                 VStack(alignment: .leading) {
-                    NavigationLink {
-                        
-                    } label: {
-                        Text("Select client")
-                            .font(.system(size: 16, weight: .bold))
-                            .foregroundStyle(.white)
-                            .padding(12)
-                            .background(.indigo)
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                    HStack {
+                        NavigationLink {
+                            SelectClientView(vm: vm, didSelectClient: {client in
+                                vm.client = client
+                            })
+                        } label: {
+                            Text("Select client")
+                                .font(.system(size: 16, weight: .bold))
+                                .foregroundStyle(.white)
+                                .padding(12)
+                                .background(.indigo)
+                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                    }
+                        Spacer()
+                        if let client = vm.client {
+                            Text(client.name)
+                                .font(.system(size: 12, weight: .semibold))
+                                .padding(8)
+                                .overlay(RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 1))
+                        }
                     }
 
                     
@@ -51,8 +62,8 @@ struct CreateAppointmentView: View {
                     Divider()
                 }
                 
-                Button {
-                    
+                NavigationLink {
+                    ConfirmedBookingView(vm: vm)
                 } label: {
                     Text("Confirm").bold()
                 }

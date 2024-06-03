@@ -13,8 +13,10 @@ final class AppointmentViewModel: ObservableObject {
     @Published var appointments = [Appointment]()
     @Published var clients = [Client]()
     @Published var services = [Service]()
+    @Published var searchText = ""
     @Published var name = ""
     @Published var selectedDate = Date()
+    @Published var appointment: Appointment? = nil
     @Published var client: Client? = nil
     @Published var service: Service? = nil
     
