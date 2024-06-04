@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 import Firebase
 
 final class ClientViewModel: ObservableObject {
@@ -18,7 +17,11 @@ final class ClientViewModel: ObservableObject {
     @Published var notes = ""
     @Published var isFavourite = false
     
-    var cancellables = Set<AnyCancellable>()
+    var filteredClients: [Client] {
+        guard !searchText.isEmpty else { return clients }
+        return clients.filter({ $0.name.localizedCaseInsensitiveContains(searchText)})
+    }
+
     let db = Firestore.firestore()
     
     func fetchClients() {
@@ -68,27 +71,6 @@ final class ClientViewModel: ObservableObject {
                 // handle error here
                 print("Failed to delete client to firestore")
             }
-        }
-    }
-    
-    func searchClient() {
-        $searchText
-            .combineLatest($clients)
-            .map(filterClient)
-            .sink { [weak self] (returnedClients) in
-                self?.clients = returnedClients
-            }
-            .store(in: &cancellables)
-    }
-    
-    private func filterClient(text: String, clients: [Client]) -> [Client] {
-        guard !text.isEmpty else {
-            return clients
-        }
-        let lowercasedText = text.lowercased()
-        return clients.filter { (client) -> Bool in
-            return client.name.lowercased().contains(lowercasedText) ||
-            ((client.nickname?.lowercased().contains(lowercasedText)) != nil)
         }
     }
 }

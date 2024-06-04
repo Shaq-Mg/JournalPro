@@ -13,7 +13,7 @@ struct ServicesView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(vm.services) { service in
+                ForEach(vm.filteredServices) { service in
                     ZStack(alignment: .leading) {
                         NavigationLink(destination: ServiceDetailView(service: service)) {
                             EmptyView()
@@ -23,6 +23,7 @@ struct ServicesView: View {
                     }
                 }
             }
+            .searchable(text: $vm.searchText, prompt: "Search services")
             .onAppear { vm.fetchServices() }
             .sheet(isPresented: $isShowNewService) {
                 CreateServiceView()
@@ -59,6 +60,7 @@ struct ServiceRowView: View {
             Spacer()
             VStack(alignment: .trailing, spacing: 2) {
                 Text("Price: £\(service.price)")
+                    .foregroundStyle(.black)
                 Text("\(service.duration)mins")
             }
             .font(.caption)

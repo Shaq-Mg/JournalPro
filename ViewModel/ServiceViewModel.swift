@@ -10,9 +10,15 @@ import Firebase
 
 class ServiceViewModel: ObservableObject {
     @Published var services = [Service]()
+    @Published var searchText = ""
     @Published var title = ""
     @Published var price = ""
     @Published var duration = ""
+    
+    var filteredServices: [Service] {
+        guard !searchText.isEmpty else { return services }
+        return services.filter({ $0.title.localizedCaseInsensitiveContains(searchText)})
+    }
     
     let db = Firestore.firestore()
     

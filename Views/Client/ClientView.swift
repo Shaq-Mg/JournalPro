@@ -15,7 +15,7 @@ struct ClientView: View {
         NavigationStack {
             List {
                 Section("Clients") {
-                    ForEach(vm.clients) { client in
+                    ForEach(vm.filteredClients) { client in
                         ZStack(alignment: .leading) {
                             NavigationLink(destination: ClientDetailView(vm: vm, client: client)) {
                                 EmptyView()
@@ -26,7 +26,7 @@ struct ClientView: View {
                     }
                 }
             }
-            .searchable(text: $vm.searchText, prompt: "Search")
+            .searchable(text: $vm.searchText)
             .onAppear { vm.fetchClients() }
             .sheet(isPresented: $isShowNewClient, content: {
                 NavigationStack {
