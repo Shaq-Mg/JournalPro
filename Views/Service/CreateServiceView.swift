@@ -19,12 +19,15 @@ struct CreateServiceView: View {
                     InputView(text: $vm.price, title: "Price", placeholder: "Price")
                         .keyboardType(.decimalPad)
                     Spacer()
-                        InputView(text: $vm.duration, title: "Duration", placeholder: "Duration")
+                        InputView(text: $vm.duration, title: "Duration", placeholder: "Minutes")
                         .keyboardType(.decimalPad)
                 }
                 Button {
                     vm.saveService(title: vm.title, price: vm.price, duration: vm.duration)
                     dismiss()
+                    vm.title = ""
+                    vm.price = ""
+                    vm.duration = ""
                 } label: {
                     Text("Save")
                 }

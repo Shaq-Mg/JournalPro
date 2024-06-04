@@ -9,25 +9,35 @@ import SwiftUI
 
 struct ServicesView: View {
     @EnvironmentObject var vm: ServiceViewModel
+    @State private var isShowNewService = false
     var body: some View {
         NavigationStack {
             List {
                 ForEach(vm.services) { service in
-                    if vm.services.isEmpty {
-                        Text("No services")
-                    } else {
-                        HStack {
-                            Text(service.title)
-                            
-                            VStack(alignment: .leading, spacing: 2) {
-                                Text("Price: \(service.price)")
-                                Text("Duration: \(service.duration)")
-                            }
+                    ZStack(alignment: .leading) {
+                        NavigationLink(destination: ServiceDetailView(service: service)) {
+                            EmptyView()
                         }
+                        .opacity(0)
+                        ServiceRowView(service: service)
                     }
                 }
             }
-        }.navigationTitle("Services")
+            .onAppear { vm.fetchServices() }
+            .sheet(isPresented: $isShowNewService) {
+                CreateServiceView()
+            }
+        }
+        .navigationTitle("Services")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    isShowNewService.toggle()
+                } label: {
+                    CreateNavButton()
+                }
+            }
+        }
     }
 }
 
@@ -36,6 +46,23 @@ struct ServicesView_Previews: PreviewProvider {
         NavigationStack {
             ServicesView()
                 .environmentObject(ServiceViewModel())
+        }
+    }
+}
+
+struct ServiceRowView: View {
+    let service: Service
+    var body: some View {
+        HStack {
+            Text(service.title)
+                .font(.headline)
+            Spacer()
+            VStack(alignment: .trailing, spacing: 2) {
+                Text("Price: £\(service.price)")
+                Text("\(service.duration)mins")
+            }
+            .font(.caption)
+            .foregroundStyle(.secondary)
         }
     }
 }
