@@ -40,9 +40,8 @@ struct CreateClientView: View {
             }
             .padding(.horizontal)
             .navigationBarTitle("Create Client")
-            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Cancel") {
                         dismiss()
                     }

@@ -23,7 +23,7 @@ struct CreateServiceView: View {
                         .keyboardType(.decimalPad)
                 }
                 Button {
-                    
+                    vm.saveService(title: vm.title, price: vm.price, duration: vm.duration)
                     dismiss()
                 } label: {
                     Text("Save")
@@ -39,9 +39,8 @@ struct CreateServiceView: View {
             }
             .padding(.horizontal)
             .navigationBarTitle("Create Client")
-            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Cancel") {
                         dismiss()
                     }

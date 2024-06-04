@@ -38,7 +38,7 @@ struct ClientView: View {
                     Button {
                         isShowNewClient.toggle()
                     } label: {
-                        Image(systemName: "plus")
+                        CreateNavButton()
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
