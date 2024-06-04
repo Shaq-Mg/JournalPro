@@ -23,6 +23,7 @@
 		462732142C08BB710063524D /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462732132C08BB710063524D /* SettingsViewModel.swift */; };
 		464F9F582C0DE38600357430 /* SelectClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464F9F572C0DE38600357430 /* SelectClientView.swift */; };
 		464F9F5A2C0DEE6B00357430 /* ConfirmedBookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464F9F592C0DEE6B00357430 /* ConfirmedBookingView.swift */; };
+		465A96C32C0F2687007BE421 /* ServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A96C22C0F2687007BE421 /* ServiceViewModel.swift */; };
 		4683224E2BF381E5006F9BD4 /* JournalProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683224D2BF381E5006F9BD4 /* JournalProApp.swift */; };
 		468322522BF381E6006F9BD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468322512BF381E6006F9BD4 /* Assets.xcassets */; };
 		468322552BF381E6006F9BD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468322542BF381E6006F9BD4 /* Preview Assets.xcassets */; };
@@ -68,6 +69,7 @@
 		462732132C08BB710063524D /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		464F9F572C0DE38600357430 /* SelectClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectClientView.swift; sourceTree = "<group>"; };
 		464F9F592C0DEE6B00357430 /* ConfirmedBookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmedBookingView.swift; sourceTree = "<group>"; };
+		465A96C22C0F2687007BE421 /* ServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceViewModel.swift; sourceTree = "<group>"; };
 		4683224A2BF381E5006F9BD4 /* JournalPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournalPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4683224D2BF381E5006F9BD4 /* JournalProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalProApp.swift; sourceTree = "<group>"; };
 		468322512BF381E6006F9BD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,7 +123,6 @@
 				464F9F592C0DEE6B00357430 /* ConfirmedBookingView.swift */,
 				460CE6762C0CC37E009AFA53 /* CreateAppointmentView.swift */,
 				464F9F572C0DE38600357430 /* SelectClientView.swift */,
-				462732082C08AF800063524D /* SignIn */,
 			);
 			path = Appointment;
 			sourceTree = "<group>";
@@ -223,6 +224,7 @@
 			children = (
 				460CE6752C0CC366009AFA53 /* Appointment */,
 				468322822BF387BF006F9BD4 /* Client */,
+				462732082C08AF800063524D /* SignIn */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -233,6 +235,7 @@
 				460CE6732C0CB297009AFA53 /* AppointmentViewModel.swift */,
 				46139D6A2C0A7D1300EBFBD0 /* ClientViewModel.swift */,
 				462732132C08BB710063524D /* SettingsViewModel.swift */,
+				465A96C22C0F2687007BE421 /* ServiceViewModel.swift */,
 				462732112C08B50C0063524D /* SignInViewModel.swift */,
 			);
 			path = ViewModel;
@@ -423,6 +426,7 @@
 				46139D692C0A7C6D00EBFBD0 /* Client.swift in Sources */,
 				46E1E7802C0A50DD00522BD4 /* SignInView.swift in Sources */,
 				462732102C08B2930063524D /* AppUser.swift in Sources */,
+				465A96C32C0F2687007BE421 /* ServiceViewModel.swift in Sources */,
 				460CE6772C0CC37E009AFA53 /* CreateAppointmentView.swift in Sources */,
 				462732142C08BB710063524D /* SettingsViewModel.swift in Sources */,
 				4683228C2BF38C64006F9BD4 /* ClientDetailView.swift in Sources */,

@@ -10,7 +10,7 @@ import Firebase
 import FirebaseFirestoreSwift
 
 struct Service: Identifiable, Codable {
-    @DocumentID var id: String?
+    var id: String
     let title, price: String
     let duration: Int
 //    init(data: [String: Any]) {
