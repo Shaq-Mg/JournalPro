@@ -36,4 +36,16 @@ class ServiceViewModel: ObservableObject {
             }
         }
     }
+    
+    func deleteService(serviceToDelete: Service) {
+        db.collection("services").document(serviceToDelete.id).delete { error in
+            if error == nil {
+                DispatchQueue.main.async {
+                    self.services.removeAll { service in
+                        return service.id == serviceToDelete.id
+                    }
+                }
+            }
+        }
+    }
 }
