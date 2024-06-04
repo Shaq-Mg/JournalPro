@@ -12,7 +12,7 @@ import FirebaseFirestoreSwift
 struct Service: Identifiable, Codable {
     var id: String
     let title, price: String
-    let duration: Int
+    let duration: String
 //    init(data: [String: Any]) {
 //        self.title = data[FirebaseConstants.title] as? String ?? "n/a"
 //        self.price = data[FirebaseConstants.price] as? String ?? "n/a"

@@ -10,6 +10,9 @@ import Firebase
 
 class ServiceViewModel: ObservableObject {
     @Published var services = [Service]()
+    @Published var title = ""
+    @Published var price = ""
+    @Published var duration = ""
     
     let db = Firestore.firestore()
     
@@ -18,7 +21,7 @@ class ServiceViewModel: ObservableObject {
             if error == nil {
                 if let snapshot = snapshot {
                     self.services = snapshot.documents.map({ doc in
-                        return Service(id: doc.documentID, title: doc["title"] as? String ?? "", price: doc["price"] as? String ?? "", duration: doc["duration"] as? Int ?? 0)
+                        return Service(id: doc.documentID, title: doc["title"] as? String ?? "", price: doc["price"] as? String ?? "", duration: doc["duration"] as? String ?? "")
                     })
                 }
             } else {
@@ -27,7 +30,7 @@ class ServiceViewModel: ObservableObject {
         }
     }
     
-    func saveService(title: String, price: String, duration: Int) {
+    func saveService(title: String, price: String, duration: String) {
         db.collection("services").addDocument(data: ["title": title, "price": price, "duration": duration]) { error in
             if error == nil {
                 self.fetchServices()
