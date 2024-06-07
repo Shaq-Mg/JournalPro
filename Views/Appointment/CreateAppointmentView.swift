@@ -37,7 +37,7 @@ struct CreateAppointmentView: View {
                                 .padding(12)
                                 .background(.indigo)
                                 .clipShape(RoundedRectangle(cornerRadius: 20))
-                    }
+                        }
                         Spacer()
                         if let client = vm.client {
                             Text(client.name)
@@ -46,7 +46,7 @@ struct CreateAppointmentView: View {
                                 .overlay(RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 1))
                         }
                     }
-
+                    
                     
                     Divider()
                     HStack {
@@ -61,7 +61,7 @@ struct CreateAppointmentView: View {
                                 .padding(12)
                                 .background(.indigo)
                                 .clipShape(RoundedRectangle(cornerRadius: 20))
-                    }
+                        }
                         Spacer()
                         Spacer()
                         if let service = vm.service {
@@ -84,10 +84,12 @@ struct CreateAppointmentView: View {
             .navigationTitle("Book appointment")
             .onAppear{ vm.fetchClients() }
             .padding(.horizontal)
-            .sheet(isPresented: $vm.bookingConfirmed) {
-                ConfirmedBookingView()
-                    .environmentObject(vm)
-            }
+            .fullScreenCover(isPresented: $vm.bookingConfirmed, content: {
+                NavigationStack {
+                    ConfirmedBookingView()
+                        .environmentObject(vm)
+                }
+            })
         }
     }
 }

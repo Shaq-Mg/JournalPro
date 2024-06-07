@@ -29,8 +29,8 @@ struct ConfirmedBookingView: View {
                         Text("\(vm.appointment?.date ?? Date())")
                     }
                 }
-                    .onAppear { vm.fetchAppointments() }
-                    .font(.title2)
+                .onAppear { vm.fetchAppointments() }
+                .font(.title2)
                 .fontWeight(.semibold)
                 
                 Spacer()
@@ -43,6 +43,7 @@ struct ConfirmedBookingView: View {
                 .background(.indigo)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
             }
+            .padding(.horizontal)
         }
         .navigationTitle("Booking confirmed")
     }
