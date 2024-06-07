@@ -10,6 +10,7 @@ import SwiftUI
 struct ConfirmedBookingView: View {
     @EnvironmentObject var vm: AppointmentViewModel
     @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
         NavigationStack {
             VStack {

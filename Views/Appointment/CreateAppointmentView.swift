@@ -10,6 +10,7 @@ import SwiftUI
 struct CreateAppointmentView: View {
     @EnvironmentObject var vm: AppointmentViewModel
     let didSaveAppointment: (Appointment) -> ()
+    
     var body: some View {
         NavigationStack {
             VStack(spacing: 16) {

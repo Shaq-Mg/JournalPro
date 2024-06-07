@@ -76,7 +76,7 @@ struct ServiceDetailView: View {
                         dismiss()
                     }
                 }
-        }
+            }
         }
     }
 }

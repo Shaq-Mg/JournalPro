@@ -37,7 +37,7 @@ struct CalenderView: View {
                     Image(systemName: "arrow.right")
                 }
             }
-            .font(.system(size: 30, weight: .semibold))
+            .font(.system(size: 25, weight: .semibold))
             .foregroundStyle(.indigo)
             
             HStack {
