@@ -37,6 +37,7 @@
 		468322842BF387D4006F9BD4 /* CreateClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468322832BF387D4006F9BD4 /* CreateClientView.swift */; };
 		468322862BF38A16006F9BD4 /* ClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468322852BF38A16006F9BD4 /* ClientView.swift */; };
 		4683228C2BF38C64006F9BD4 /* ClientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683228B2BF38C64006F9BD4 /* ClientDetailView.swift */; };
+		4692670E2C132B0E00498B4B /* SelectServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4692670D2C132B0E00498B4B /* SelectServiceView.swift */; };
 		46E1E7802C0A50DD00522BD4 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1E77F2C0A50DD00522BD4 /* SignInView.swift */; };
 		46E1E7822C0A54F100522BD4 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1E7812C0A54F100522BD4 /* Appointment.swift */; };
 		46E1E7842C0A550A00522BD4 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1E7832C0A550A00522BD4 /* Service.swift */; };
@@ -90,6 +91,7 @@
 		468322832BF387D4006F9BD4 /* CreateClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClientView.swift; sourceTree = "<group>"; };
 		468322852BF38A16006F9BD4 /* ClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientView.swift; sourceTree = "<group>"; };
 		4683228B2BF38C64006F9BD4 /* ClientDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDetailView.swift; sourceTree = "<group>"; };
+		4692670D2C132B0E00498B4B /* SelectServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectServiceView.swift; sourceTree = "<group>"; };
 		46E1E77F2C0A50DD00522BD4 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		46E1E7812C0A54F100522BD4 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		46E1E7832C0A550A00522BD4 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				464F9F592C0DEE6B00357430 /* ConfirmedBookingView.swift */,
 				460CE6762C0CC37E009AFA53 /* CreateAppointmentView.swift */,
 				464F9F572C0DE38600357430 /* SelectClientView.swift */,
+				4692670D2C132B0E00498B4B /* SelectServiceView.swift */,
 			);
 			path = Appointment;
 			sourceTree = "<group>";
@@ -268,7 +271,7 @@
 				4627320F2C08B2930063524D /* AppUser.swift */,
 				46139D682C0A7C6D00EBFBD0 /* Client.swift */,
 				46E1E7832C0A550A00522BD4 /* Service.swift */,
-				46E1E7852C0A554900522BD4 /* FirebaseConstants.swift */,
+				4692670C2C13257100498B4B /* CodingKeys */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -290,6 +293,14 @@
 				468322852BF38A16006F9BD4 /* ClientView.swift */,
 			);
 			path = Client;
+			sourceTree = "<group>";
+		};
+		4692670C2C13257100498B4B /* CodingKeys */ = {
+			isa = PBXGroup;
+			children = (
+				46E1E7852C0A554900522BD4 /* FirebaseConstants.swift */,
+			);
+			path = CodingKeys;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,6 +453,7 @@
 				462732122C08B50C0063524D /* SignInViewModel.swift in Sources */,
 				468322842BF387D4006F9BD4 /* CreateClientView.swift in Sources */,
 				464F9F5A2C0DEE6B00357430 /* ConfirmedBookingView.swift in Sources */,
+				4692670E2C132B0E00498B4B /* SelectServiceView.swift in Sources */,
 				46139D6B2C0A7D1300EBFBD0 /* ClientViewModel.swift in Sources */,
 				46E1E7862C0A554900522BD4 /* FirebaseConstants.swift in Sources */,
 				46139D692C0A7C6D00EBFBD0 /* Client.swift in Sources */,

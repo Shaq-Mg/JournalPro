@@ -19,13 +19,15 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct JournalProApp: App {
-    @StateObject var ServiceVM = ServiceViewModel()
+    @StateObject var serviceVM = ServiceViewModel()
+    @StateObject var appointmentVM = AppointmentViewModel()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
             NavigationStack {
                 ClientView(vm: ClientViewModel())
-                    .environmentObject(ServiceVM)
+                    .environmentObject(serviceVM)
+                    .environmentObject(AppointmentViewModel())
             }
         }
     }

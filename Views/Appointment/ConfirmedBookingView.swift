@@ -8,45 +8,51 @@
 import SwiftUI
 
 struct ConfirmedBookingView: View {
-    @ObservedObject var vm: AppointmentViewModel
+    @EnvironmentObject var vm: AppointmentViewModel
     @Environment(\.dismiss) private var dismiss
     var body: some View {
-        VStack {
-            Spacer()
-            if let apppointment = vm.appointment {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Image(systemName: "pencil.line")
-                        Text(vm.appointment?.name ?? "n/a")
-                    }
-                    HStack {
+        NavigationStack {
+            VStack {
+                Text("\(vm.appointment?.date ?? Date())")
+                Spacer()
+                VStack(alignment: .leading, spacing: 16) {
+                    HStack(spacing: 10) {
                         Image(systemName: "person")
                         Text(vm.appointment?.client?.name ?? "n/a")
                     }
-                    HStack {
+                    HStack(spacing: 10) {
                         Image(systemName: "book")
                         Text(vm.appointment?.service.title ?? "n/a")
                     }
-                    HStack {
+                    HStack(spacing: 10) {
                         Image(systemName: "clock")
                         Text("\(vm.appointment?.date ?? Date())")
                     }
                 }
-            } else {
-                Text("No confirmed booking")
+                    .onAppear { vm.fetchAppointments() }
+                    .font(.title2)
+                .fontWeight(.semibold)
+                
+                Spacer()
+                Button("Done") {
+                    dismiss()
+                }
+                .foregroundStyle(.white)
+                .font(.headline)
+                .padding()
+                .background(.indigo)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
             }
-            Spacer()
-            Button("Done") {
-                dismiss()
-            }
-            .padding()
-            .font(.system(size: 20, weight: .bold))
         }
+        .navigationTitle("Booking confirmed")
     }
 }
 
 struct ConfirmedBookingView_Previews: PreviewProvider {
     static var previews: some View {
-        ConfirmedBookingView(vm: AppointmentViewModel())
+        NavigationStack {
+            ConfirmedBookingView()
+                .environmentObject(AppointmentViewModel())
+        }
     }
 }

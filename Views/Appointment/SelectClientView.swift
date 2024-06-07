@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SelectClientView: View {
-    @ObservedObject var vm: AppointmentViewModel
+    @EnvironmentObject var vm: AppointmentViewModel
     let didSelectClient: (Client) -> ()
     @Environment(\.dismiss) private var dismiss
     var body: some View {
@@ -18,6 +18,7 @@ struct SelectClientView: View {
                     SelectClientRow(client: client)
                         .onTapGesture {
                             didSelectClient(client)
+                            let client = vm.appointment?.client
                             dismiss()
                         }
                 }
@@ -42,7 +43,8 @@ struct SelectClientView: View {
 struct SelectClientView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            SelectClientView(vm: AppointmentViewModel(), didSelectClient: { _ in })
+            SelectClientView(didSelectClient: { _ in })
+                .environmentObject(AppointmentViewModel())
         }
     }
 }

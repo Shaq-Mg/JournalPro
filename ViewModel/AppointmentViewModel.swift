@@ -19,9 +19,9 @@ final class AppointmentViewModel: ObservableObject {
     @Published var appointment: Appointment? = nil
     @Published var client: Client? = nil
     @Published var service: Service? = nil
+    @Published var bookingConfirmed = false
     
     let db = Firestore.firestore()
-
     
     func fetchAppointments() {
         db.collection("appointments").getDocuments { snapshot, error in
@@ -39,9 +39,9 @@ final class AppointmentViewModel: ObservableObject {
         }
     }
     
-    func saveAppointment(name: String?, service: Service, client: Client?, date: Date) {
+    func save(name: String?, service: Service?, client: Client?, date: Date) {
         db.collection("appointments")
-            .addDocument(data: ["name": name ?? "n/a", "Service": service, "client": client ?? "n/a", "date": date]) { error in
+            .addDocument(data: ["name": name ?? "n/a", "service": service ?? "n/a", "client": client ?? "n/a", "date": date]) { error in
                 if error == nil {
                     self.fetchAppointments()
                     print("Successfully to saved appointment to firestore")
@@ -52,12 +52,12 @@ final class AppointmentViewModel: ObservableObject {
             }
     }
     
-    func updateClient(appointmentToUpdate: Appointment) {
+    func update(appointmentToUpdate: Appointment) {
 
         db.collection("appointments").document(appointmentToUpdate.id ?? "").setData(["name": appointmentToUpdate.name ?? "n/a", "client": appointmentToUpdate.client ?? "n/a", "service": appointmentToUpdate.service, "date": appointmentToUpdate.date], merge: true)
     }
     
-    func deleteAppointment(appointmentToDelete: Client) {
+    func delete(appointmentToDelete: Client) {
         let db = Firestore.firestore()
         db.collection("appointments").document(appointmentToDelete.id).delete { error in
             if error == nil {
@@ -82,6 +82,20 @@ final class AppointmentViewModel: ObservableObject {
                             return Client(id: doc.documentID, name: doc["name"] as? String ?? "n/a", phoneNumber: doc["phone_number"] as? String ?? "n/a", nickname: doc["nickname"] as? String ?? "n/a", notes: doc["notes"] as? String ?? "-", isFavourite: doc["is_favourite"] as? Bool ?? false)
                         })
                     }
+                }
+            } else {
+                // handle error here
+            }
+        }
+    }
+    
+    func fetchServices() {
+        db.collection("services").getDocuments { snapshot, error in
+            if error == nil {
+                if let snapshot = snapshot {
+                    self.services = snapshot.documents.map({ doc in
+                        return Service(id: doc.documentID, title: doc["title"] as? String ?? "", price: doc["price"] as? String ?? "", duration: doc["duration"] as? String ?? "")
+                    })
                 }
             } else {
                 // handle error here

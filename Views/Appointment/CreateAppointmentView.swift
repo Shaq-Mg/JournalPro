@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CreateAppointmentView: View {
-    @StateObject var vm = AppointmentViewModel()
-    
+    @EnvironmentObject var vm: AppointmentViewModel
+    let didSaveAppointment: (Appointment) -> ()
     var body: some View {
         NavigationStack {
             VStack(spacing: 16) {
@@ -27,9 +27,9 @@ struct CreateAppointmentView: View {
                 VStack(alignment: .leading) {
                     HStack {
                         NavigationLink {
-                            SelectClientView(vm: vm, didSelectClient: {client in
-                                vm.client = client
-                            })
+                            SelectClientView(didSelectClient: { client in
+                                vm.client = client })
+                            .environmentObject(vm)
                         } label: {
                             Text("Select client")
                                 .font(.system(size: 16, weight: .bold))
@@ -49,21 +49,34 @@ struct CreateAppointmentView: View {
 
                     
                     Divider()
-                    NavigationLink {
-                        
-                    } label: {
-                        Text("Select service")
-                            .font(.system(size: 16, weight: .bold))
-                            .foregroundStyle(.white)
-                            .padding(12)
-                            .background(.indigo)
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                    HStack {
+                        NavigationLink {
+                            SelectServiceView(didSelectService: { service in
+                                vm.service = service })
+                            .environmentObject(vm)
+                        } label: {
+                            Text("Select service")
+                                .font(.system(size: 16, weight: .bold))
+                                .foregroundStyle(.white)
+                                .padding(12)
+                                .background(.indigo)
+                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                    }
+                        Spacer()
+                        Spacer()
+                        if let service = vm.service {
+                            Text(service.title)
+                                .font(.system(size: 12, weight: .semibold))
+                                .padding(8)
+                                .overlay(RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 1))
+                        }
                     }
                     Divider()
                 }
                 
-                NavigationLink {
-                    ConfirmedBookingView(vm: vm)
+                Button {
+                    vm.save(name: vm.name, service: vm.appointment?.service, client: vm.appointment?.client, date: vm.selectedDate)
+                    vm.bookingConfirmed.toggle()
                 } label: {
                     Text("Confirm").bold()
                 }
@@ -71,6 +84,10 @@ struct CreateAppointmentView: View {
             .navigationTitle("Book appointment")
             .onAppear{ vm.fetchClients() }
             .padding(.horizontal)
+            .sheet(isPresented: $vm.bookingConfirmed) {
+                ConfirmedBookingView()
+                    .environmentObject(vm)
+            }
         }
     }
 }
@@ -78,7 +95,8 @@ struct CreateAppointmentView: View {
 struct CreateAppointmentView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            CreateAppointmentView()
+            CreateAppointmentView(didSaveAppointment: { _ in })
+                .environmentObject(AppointmentViewModel())
         }
     }
 }
