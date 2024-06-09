@@ -31,6 +31,7 @@
 		466BB0282C1621E900532457 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466BB0272C1621E900532457 /* ScheduleView.swift */; };
 		466BB02A2C16261900532457 /* CalenderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466BB0292C16261900532457 /* CalenderViewModel.swift */; };
 		466BB02C2C16282000532457 /* CalenderHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466BB02B2C16282000532457 /* CalenderHeaderView.swift */; };
+		466BB02E2C16293200532457 /* ApptInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466BB02D2C16293200532457 /* ApptInputView.swift */; };
 		4683224E2BF381E5006F9BD4 /* JournalProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683224D2BF381E5006F9BD4 /* JournalProApp.swift */; };
 		468322522BF381E6006F9BD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468322512BF381E6006F9BD4 /* Assets.xcassets */; };
 		468322552BF381E6006F9BD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468322542BF381E6006F9BD4 /* Preview Assets.xcassets */; };
@@ -89,6 +90,7 @@
 		466BB0272C1621E900532457 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		466BB0292C16261900532457 /* CalenderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewModel.swift; sourceTree = "<group>"; };
 		466BB02B2C16282000532457 /* CalenderHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderHeaderView.swift; sourceTree = "<group>"; };
+		466BB02D2C16293200532457 /* ApptInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApptInputView.swift; sourceTree = "<group>"; };
 		4683224A2BF381E5006F9BD4 /* JournalPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournalPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4683224D2BF381E5006F9BD4 /* JournalProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalProApp.swift; sourceTree = "<group>"; };
 		468322512BF381E6006F9BD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		462732092C08AF920063524D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				466BB02D2C16293200532457 /* ApptInputView.swift */,
 				466BB02B2C16282000532457 /* CalenderHeaderView.swift */,
 				465A96C92C0F393E007BE421 /* CreateNavButton.swift */,
 				4627320A2C08AFAD0063524D /* InputView.swift */,
@@ -501,6 +504,7 @@
 				46E1E7802C0A50DD00522BD4 /* SignInView.swift in Sources */,
 				462732102C08B2930063524D /* AppUser.swift in Sources */,
 				465A96C32C0F2687007BE421 /* ServiceViewModel.swift in Sources */,
+				466BB02E2C16293200532457 /* ApptInputView.swift in Sources */,
 				466BB02C2C16282000532457 /* CalenderHeaderView.swift in Sources */,
 				465A96CA2C0F393E007BE421 /* CreateNavButton.swift in Sources */,
 				46D145D12C13913F00DE5DE4 /* DayView.swift in Sources */,
