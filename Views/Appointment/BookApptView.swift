@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CreateAppointmentView: View {
+struct BookApptView: View {
     @EnvironmentObject var vm: AppointmentViewModel
     let didSaveAppointment: (Appointment) -> ()
     
@@ -95,10 +95,10 @@ struct CreateAppointmentView: View {
     }
 }
 
-struct CreateAppointmentView_Previews: PreviewProvider {
+struct BookApptView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            CreateAppointmentView(didSaveAppointment: { _ in })
+            BookApptView(didSaveAppointment: { _ in })
                 .environmentObject(AppointmentViewModel())
         }
     }

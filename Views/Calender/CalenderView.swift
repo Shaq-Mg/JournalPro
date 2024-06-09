@@ -23,9 +23,24 @@ struct CalenderView: View {
                 }
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 7)) {
                     ForEach(vm.fetchDates()) { value in
-                        ZStack {
+                        VStack {
                             if value.day != -1 {
-                                Text("\(value.day)")
+                                NavigationLink {
+                                    MakeApptView(currentDate: value.date)
+                                        .environmentObject(vm)
+                                } label: {
+                                    Text("\(value.day)")
+                                        .background(
+                                            ZStack(alignment: .bottom) {
+                                                if value.date.monthYearFormat() == Date().monthYearFormat() {
+                                                    Circle()
+                                                        .frame(width: 8, height: 8)
+                                                        .foregroundStyle(.indigo)
+                                                }
+                                            }
+                                        )
+                                }
+                                
                             } else {
                                 Text("")
                             }
@@ -36,6 +51,7 @@ struct CalenderView: View {
                 }
             }
             .navigationTitle("Select a date")
+            .navigationBarBackButtonHidden(true)
             .padding(.horizontal)
         }
     }

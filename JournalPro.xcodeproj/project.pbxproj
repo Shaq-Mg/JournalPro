@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		460CE6742C0CB297009AFA53 /* AppointmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460CE6732C0CB297009AFA53 /* AppointmentViewModel.swift */; };
-		460CE6772C0CC37E009AFA53 /* CreateAppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460CE6762C0CC37E009AFA53 /* CreateAppointmentView.swift */; };
+		460CE6772C0CC37E009AFA53 /* BookApptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460CE6762C0CC37E009AFA53 /* BookApptView.swift */; };
 		46139D692C0A7C6D00EBFBD0 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46139D682C0A7C6D00EBFBD0 /* Client.swift */; };
 		46139D6B2C0A7D1300EBFBD0 /* ClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46139D6A2C0A7D1300EBFBD0 /* ClientViewModel.swift */; };
 		462731FD2C08ADB80063524D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 462731FC2C08ADB80063524D /* GoogleService-Info.plist */; };
@@ -32,6 +32,7 @@
 		466BB02A2C16261900532457 /* CalenderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466BB0292C16261900532457 /* CalenderViewModel.swift */; };
 		466BB02C2C16282000532457 /* CalenderHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466BB02B2C16282000532457 /* CalenderHeaderView.swift */; };
 		466BB02E2C16293200532457 /* ApptInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466BB02D2C16293200532457 /* ApptInputView.swift */; };
+		466BB0302C16371E00532457 /* MakeApptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466BB02F2C16371E00532457 /* MakeApptView.swift */; };
 		4683224E2BF381E5006F9BD4 /* JournalProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683224D2BF381E5006F9BD4 /* JournalProApp.swift */; };
 		468322522BF381E6006F9BD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468322512BF381E6006F9BD4 /* Assets.xcassets */; };
 		468322552BF381E6006F9BD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468322542BF381E6006F9BD4 /* Preview Assets.xcassets */; };
@@ -71,7 +72,7 @@
 
 /* Begin PBXFileReference section */
 		460CE6732C0CB297009AFA53 /* AppointmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentViewModel.swift; sourceTree = "<group>"; };
-		460CE6762C0CC37E009AFA53 /* CreateAppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAppointmentView.swift; sourceTree = "<group>"; };
+		460CE6762C0CC37E009AFA53 /* BookApptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookApptView.swift; sourceTree = "<group>"; };
 		46139D682C0A7C6D00EBFBD0 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		46139D6A2C0A7D1300EBFBD0 /* ClientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViewModel.swift; sourceTree = "<group>"; };
 		462731FC2C08ADB80063524D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -91,6 +92,7 @@
 		466BB0292C16261900532457 /* CalenderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewModel.swift; sourceTree = "<group>"; };
 		466BB02B2C16282000532457 /* CalenderHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderHeaderView.swift; sourceTree = "<group>"; };
 		466BB02D2C16293200532457 /* ApptInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApptInputView.swift; sourceTree = "<group>"; };
+		466BB02F2C16371E00532457 /* MakeApptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeApptView.swift; sourceTree = "<group>"; };
 		4683224A2BF381E5006F9BD4 /* JournalPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournalPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4683224D2BF381E5006F9BD4 /* JournalProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalProApp.swift; sourceTree = "<group>"; };
 		468322512BF381E6006F9BD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -146,8 +148,8 @@
 		460CE6752C0CC366009AFA53 /* Appointment */ = {
 			isa = PBXGroup;
 			children = (
+				460CE6762C0CC37E009AFA53 /* BookApptView.swift */,
 				464F9F592C0DEE6B00357430 /* ConfirmedBookingView.swift */,
-				460CE6762C0CC37E009AFA53 /* CreateAppointmentView.swift */,
 				464F9F572C0DE38600357430 /* SelectClientView.swift */,
 				4692670D2C132B0E00498B4B /* SelectServiceView.swift */,
 			);
@@ -338,6 +340,7 @@
 			children = (
 				469267132C137A1C00498B4B /* CalenderView.swift */,
 				46D145D02C13913F00DE5DE4 /* DayView.swift */,
+				466BB02F2C16371E00532457 /* MakeApptView.swift */,
 				466BB0272C1621E900532457 /* ScheduleView.swift */,
 			);
 			path = Calender;
@@ -496,6 +499,7 @@
 				468322842BF387D4006F9BD4 /* CreateClientView.swift in Sources */,
 				464F9F5A2C0DEE6B00357430 /* ConfirmedBookingView.swift in Sources */,
 				469267112C136C2200498B4B /* Date+Est.swift in Sources */,
+				466BB0302C16371E00532457 /* MakeApptView.swift in Sources */,
 				4692670E2C132B0E00498B4B /* SelectServiceView.swift in Sources */,
 				46139D6B2C0A7D1300EBFBD0 /* ClientViewModel.swift in Sources */,
 				46E1E7862C0A554900522BD4 /* FirebaseConstants.swift in Sources */,
@@ -508,7 +512,7 @@
 				466BB02C2C16282000532457 /* CalenderHeaderView.swift in Sources */,
 				465A96CA2C0F393E007BE421 /* CreateNavButton.swift in Sources */,
 				46D145D12C13913F00DE5DE4 /* DayView.swift in Sources */,
-				460CE6772C0CC37E009AFA53 /* CreateAppointmentView.swift in Sources */,
+				460CE6772C0CC37E009AFA53 /* BookApptView.swift in Sources */,
 				469267142C137A1C00498B4B /* CalenderView.swift in Sources */,
 				465A96C82C0F2E85007BE421 /* CreateServiceView.swift in Sources */,
 				462732142C08BB710063524D /* SettingsViewModel.swift in Sources */,
