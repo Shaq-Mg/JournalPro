@@ -76,7 +76,7 @@ struct CreateAppointmentView: View {
                 }
                 
                 Button {
-                    vm.save(name: vm.name, service: vm.appointment?.service, client: vm.appointment?.client, date: vm.selectedDate)
+                    vm.save(name: vm.name, service: vm.appointment?.service ?? Service(id: "", title: "", price: "", duration: "0"), date: vm.selectedDate)
                     vm.bookingConfirmed.toggle()
                 } label: {
                     Text("Confirm").bold()

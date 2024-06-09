@@ -18,7 +18,7 @@ struct SelectClientView: View {
                     SelectClientRow(client: client)
                         .onTapGesture {
                             didSelectClient(client)
-                            let client = vm.appointment?.client
+                            let client = vm.client
                             dismiss()
                         }
                 }

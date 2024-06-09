@@ -15,13 +15,13 @@ struct DayView: View {
             List {
                 Section("Bookings today") {
                     ForEach(vm.appointments) { appointment in
-                        HStack(spacing: 16) {
+                        HStack(alignment: .top, spacing: 16) {
                             Image(systemName: "pencil")
                                 .padding(12)
                                 .background(.secondary.opacity(0.2))
                                 .clipShape(Circle())
                             VStack(alignment: .leading, spacing: 4) {
-                                Text(appointment.client?.name ?? "")
+                                Text(appointment.name)
                                 Text(appointment.service.title)
                                     .foregroundStyle(.secondary)
                             }

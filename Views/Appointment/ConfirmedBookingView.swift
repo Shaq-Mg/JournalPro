@@ -19,7 +19,7 @@ struct ConfirmedBookingView: View {
                 VStack(alignment: .leading, spacing: 16) {
                     HStack(spacing: 10) {
                         Image(systemName: "person")
-                        Text(vm.appointment?.client?.name ?? "n/a")
+                        Text(vm.appointment?.name ?? "-")
                     }
                     HStack(spacing: 10) {
                         Image(systemName: "book")

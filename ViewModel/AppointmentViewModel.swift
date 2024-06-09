@@ -29,7 +29,7 @@ final class AppointmentViewModel: ObservableObject {
                 if let snapshot = snapshot {
                     DispatchQueue.main.async {
                         self.appointments = snapshot.documents.map({ doc in
-                            return Appointment(name: doc["name"] as? String ?? "n/a", service: Service(id: doc.documentID, title: doc["title"] as? String ?? "n/a", price: doc["price"] as? String ?? "n/a", duration: doc["duration"] as? String ?? ""), client: Client(id: doc.documentID, name: doc["name"] as? String ?? "n/a", phoneNumber: doc["phone_number"] as? String ?? "n/a", nickname: doc["nickname"] as? String ?? "n/a", notes: doc["notes"] as? String ?? "n/a", isFavourite: doc["is_favourite"] as? Bool ?? false), date: doc["date"] as? Date ?? Date())
+                            return Appointment(name: doc["name"] as! String, service: Service(id: doc.documentID, title: doc["title"] as? String ?? "n/a", price: doc["price"] as? String ?? "n/a", duration: doc["duration"] as? String ?? ""), date: doc["date"] as? Date ?? Date())
                         })
                     }
                 }
@@ -39,9 +39,9 @@ final class AppointmentViewModel: ObservableObject {
         }
     }
     
-    func save(name: String?, service: Service?, client: Client?, date: Date) {
+    func save(name: String?, service: Service, date: Date) {
         db.collection("appointments")
-            .addDocument(data: ["name": name ?? "n/a", "service": service ?? "n/a", "client": client ?? "n/a", "date": date]) { error in
+            .addDocument(data: ["name": name ?? "-", "service": service, "date": date]) { error in
                 if error == nil {
                     self.fetchAppointments()
                     print("Successfully to saved appointment to firestore")
@@ -54,7 +54,7 @@ final class AppointmentViewModel: ObservableObject {
     
     func update(appointmentToUpdate: Appointment) {
 
-        db.collection("appointments").document(appointmentToUpdate.id ?? "").setData(["name": appointmentToUpdate.name ?? "n/a", "client": appointmentToUpdate.client ?? "n/a", "service": appointmentToUpdate.service, "date": appointmentToUpdate.date], merge: true)
+        db.collection("appointments").document(appointmentToUpdate.id ?? "").setData(["name": appointmentToUpdate.name, "service": appointmentToUpdate.service, "date": appointmentToUpdate.date], merge: true)
     }
     
     func delete(appointmentToDelete: Client) {
