@@ -42,9 +42,54 @@ extension Date {
         return dates
     }
     
+    // Returns date as August 2023
+    func monthYearFormat() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM yyyy"
+        return formatter.string(from: self)
+    }
+    
+    // Returns date as 08/23/2023
     func monthDayYearFormat() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd/yyyy"
         return formatter.string(from: self)
+    }
+    
+    // Returns date as August 23, 2023
+    func fullMonthDayYearFormat() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM dd, yyyy"
+        return formatter.string(from: self)
+    }
+    
+    // Returns date as Saturday, Sunday.. etc
+    func dayOfTheWeek() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE"
+        return formatter.string(from: self)
+    }
+    
+    // Returns date as 14:30 PM
+    func timeFromDate() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm a"
+        return formatter.string(from: self)
+    }
+    
+    // Returns date as ex: 08/23/2023
+    func dayViewDateFormat() -> String {
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "hh:mm a"
+        let start = timeFormatter.string(from: self)
+        
+        let endDate = Calendar.current.date(byAdding: .minute, value: 60, to: self)!
+        let end = timeFormatter.string(from: endDate)
+        
+        let day = self.dayOfTheWeek()
+        let fullDateString = self.fullMonthDayYearFormat()
+        return "\(start) - \(end), \(day), \(fullDateString)"
+        
+        
     }
 }
