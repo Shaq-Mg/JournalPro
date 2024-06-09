@@ -21,13 +21,15 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct JournalProApp: App {
     @StateObject var serviceVM = ServiceViewModel()
     @StateObject var appointmentVM = AppointmentViewModel()
+    @StateObject var calenderVM = CalenderViewModel()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
             NavigationStack {
                 ClientView(vm: ClientViewModel())
                     .environmentObject(serviceVM)
-                    .environmentObject(AppointmentViewModel())
+                    .environmentObject(appointmentVM)
+                    .environmentObject(calenderVM)
             }
         }
     }

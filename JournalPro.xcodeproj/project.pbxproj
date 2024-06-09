@@ -28,6 +28,9 @@
 		465A96C82C0F2E85007BE421 /* CreateServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A96C72C0F2E85007BE421 /* CreateServiceView.swift */; };
 		465A96CA2C0F393E007BE421 /* CreateNavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A96C92C0F393E007BE421 /* CreateNavButton.swift */; };
 		465A96CC2C0F422D007BE421 /* ServiceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A96CB2C0F422D007BE421 /* ServiceDetailView.swift */; };
+		466BB0282C1621E900532457 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466BB0272C1621E900532457 /* ScheduleView.swift */; };
+		466BB02A2C16261900532457 /* CalenderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466BB0292C16261900532457 /* CalenderViewModel.swift */; };
+		466BB02C2C16282000532457 /* CalenderHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466BB02B2C16282000532457 /* CalenderHeaderView.swift */; };
 		4683224E2BF381E5006F9BD4 /* JournalProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683224D2BF381E5006F9BD4 /* JournalProApp.swift */; };
 		468322522BF381E6006F9BD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468322512BF381E6006F9BD4 /* Assets.xcassets */; };
 		468322552BF381E6006F9BD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468322542BF381E6006F9BD4 /* Preview Assets.xcassets */; };
@@ -83,6 +86,9 @@
 		465A96C72C0F2E85007BE421 /* CreateServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateServiceView.swift; sourceTree = "<group>"; };
 		465A96C92C0F393E007BE421 /* CreateNavButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNavButton.swift; sourceTree = "<group>"; };
 		465A96CB2C0F422D007BE421 /* ServiceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailView.swift; sourceTree = "<group>"; };
+		466BB0272C1621E900532457 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		466BB0292C16261900532457 /* CalenderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewModel.swift; sourceTree = "<group>"; };
+		466BB02B2C16282000532457 /* CalenderHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderHeaderView.swift; sourceTree = "<group>"; };
 		4683224A2BF381E5006F9BD4 /* JournalPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournalPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4683224D2BF381E5006F9BD4 /* JournalProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalProApp.swift; sourceTree = "<group>"; };
 		468322512BF381E6006F9BD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -164,6 +170,7 @@
 		462732092C08AF920063524D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				466BB02B2C16282000532457 /* CalenderHeaderView.swift */,
 				465A96C92C0F393E007BE421 /* CreateNavButton.swift */,
 				4627320A2C08AFAD0063524D /* InputView.swift */,
 			);
@@ -266,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				460CE6732C0CB297009AFA53 /* AppointmentViewModel.swift */,
+				466BB0292C16261900532457 /* CalenderViewModel.swift */,
 				46139D6A2C0A7D1300EBFBD0 /* ClientViewModel.swift */,
 				462732132C08BB710063524D /* SettingsViewModel.swift */,
 				465A96C22C0F2687007BE421 /* ServiceViewModel.swift */,
@@ -327,6 +335,7 @@
 			children = (
 				469267132C137A1C00498B4B /* CalenderView.swift */,
 				46D145D02C13913F00DE5DE4 /* DayView.swift */,
+				466BB0272C1621E900532457 /* ScheduleView.swift */,
 			);
 			path = Calender;
 			sourceTree = "<group>";
@@ -476,7 +485,9 @@
 				46E1E7822C0A54F100522BD4 /* Appointment.swift in Sources */,
 				46E1E7842C0A550A00522BD4 /* Service.swift in Sources */,
 				4627320E2C08B1A90063524D /* AuthManager.swift in Sources */,
+				466BB0282C1621E900532457 /* ScheduleView.swift in Sources */,
 				4627320B2C08AFAD0063524D /* InputView.swift in Sources */,
+				466BB02A2C16261900532457 /* CalenderViewModel.swift in Sources */,
 				4683224E2BF381E5006F9BD4 /* JournalProApp.swift in Sources */,
 				462732122C08B50C0063524D /* SignInViewModel.swift in Sources */,
 				468322842BF387D4006F9BD4 /* CreateClientView.swift in Sources */,
@@ -490,6 +501,7 @@
 				46E1E7802C0A50DD00522BD4 /* SignInView.swift in Sources */,
 				462732102C08B2930063524D /* AppUser.swift in Sources */,
 				465A96C32C0F2687007BE421 /* ServiceViewModel.swift in Sources */,
+				466BB02C2C16282000532457 /* CalenderHeaderView.swift in Sources */,
 				465A96CA2C0F393E007BE421 /* CreateNavButton.swift in Sources */,
 				46D145D12C13913F00DE5DE4 /* DayView.swift in Sources */,
 				460CE6772C0CC37E009AFA53 /* CreateAppointmentView.swift in Sources */,

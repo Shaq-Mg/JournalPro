@@ -1,13 +1,13 @@
 //
-//  CalenderView.swift
+//  ScheduleView.swift
 //  JournalPro
 //
-//  Created by Shaquille McGregor on 07/06/2024.
+//  Created by Shaquille McGregor on 09/06/2024.
 //
 
 import SwiftUI
 
-struct CalenderView: View {
+struct ScheduleView: View {
     @EnvironmentObject var vm: CalenderViewModel
     var body: some View {
         NavigationStack {
@@ -28,6 +28,9 @@ struct CalenderView: View {
                                 Text("\(value.day)")
                             } else {
                                 Text("")
+                                    .padding()
+                                    .background(.indigo.opacity(0.2))
+                                    .clipShape(Circle())
                             }
                         }
                         .font(.system(size: 20, weight: .semibold))
@@ -35,16 +38,16 @@ struct CalenderView: View {
                     }
                 }
             }
-            .navigationTitle("Select a date")
+            .navigationTitle("Schedule")
             .padding(.horizontal)
         }
     }
 }
 
-struct CalenderView_Previews: PreviewProvider {
+struct ScheduleView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            CalenderView()
+            ScheduleView()
                 .environmentObject(CalenderViewModel())
         }
     }
