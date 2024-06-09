@@ -12,12 +12,13 @@ struct CalenderView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
-                CalenderHeaderView()
+                CalenderHeaderView(selectedDate: $vm.selectedDate)
                 
                 HStack {
                     ForEach(vm.days, id: \.self) { day in
                         Text(day)
                             .font(.system(size: 20, weight: .semibold))
+                            .foregroundStyle(.indigo)
                             .frame(maxWidth: .infinity)
                     }
                 }
@@ -30,15 +31,15 @@ struct CalenderView: View {
                                         .environmentObject(vm)
                                 } label: {
                                     Text("\(value.day)")
+                                        .foregroundStyle(.black)
                                         .background(
-                                            ZStack(alignment: .bottom) {
-                                                if value.date.monthYearFormat() == Date().monthYearFormat() {
+                                            ZStack {
+                                                if value.date.monthDayYearFormat() == Date().monthDayYearFormat() {
                                                     Circle()
-                                                        .frame(width: 8, height: 8)
-                                                        .foregroundStyle(.indigo)
+                                                        .frame(width: 30, height: 30)
+                                                        .foregroundStyle(.blue.opacity(0.2))
                                                 }
-                                            }
-                                        )
+                                            })
                                 }
                                 
                             } else {
@@ -53,6 +54,9 @@ struct CalenderView: View {
             .navigationTitle("Select a date")
             .navigationBarBackButtonHidden(true)
             .padding(.horizontal)
+            .onChange(of: vm.selectedMonth) { newValue in
+                vm.selectedDate = vm.fetchSelectedMonth()
+            }
         }
     }
 }

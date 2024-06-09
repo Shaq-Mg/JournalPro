@@ -12,7 +12,7 @@ struct ScheduleView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
-                CalenderHeaderView()
+                CalenderHeaderView(selectedDate: $vm.selectedDate)
                 
                 HStack {
                     ForEach(vm.days, id: \.self) { day in

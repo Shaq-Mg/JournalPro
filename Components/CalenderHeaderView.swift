@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CalenderHeaderView: View {
     @EnvironmentObject var vm: CalenderViewModel
-    @State var selectedDate = Date()
+    @Binding var selectedDate: Date
     var body: some View {
         HStack {
             Button {
@@ -38,15 +38,12 @@ struct CalenderHeaderView: View {
         }
         .font(.system(size: 25))
         .foregroundStyle(.indigo)
-        .onChange(of: vm.selectedMonth) { newValue in
-            selectedDate = vm.fetchSelectedMonth()
-        }
     }
 }
 
 struct CalenderHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        CalenderHeaderView()
+        CalenderHeaderView(selectedDate: .constant(Date()))
             .environmentObject(CalenderViewModel())
     }
 }

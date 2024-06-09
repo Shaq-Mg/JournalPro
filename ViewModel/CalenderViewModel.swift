@@ -11,6 +11,7 @@ class CalenderViewModel: ObservableObject {
     @Published var selectedMonth = 0
     @Published var showConfirmedAppt = false
     @Published var currentDate: Date?
+    @Published var selectedDate = Date()
     @Published var times = [Date(),
                               Calendar.current.date(byAdding: .hour, value: 1, to: Date())!, Calendar.current.date(byAdding: .hour, value: 2, to: Date())!,
                               Calendar.current.date(byAdding: .hour, value: 3, to: Date())!, Calendar.current.date(byAdding: .hour, value: 4, to: Date())!]

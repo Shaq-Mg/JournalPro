@@ -12,6 +12,7 @@ struct MakeApptView: View {
     @State var selectedDate = Date()
     @State private var name = ""
     var currentDate: Date
+    
     var body: some View {
         NavigationStack {
             VStack(spacing: 14) {
