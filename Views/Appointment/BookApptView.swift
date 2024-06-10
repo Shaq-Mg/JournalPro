@@ -87,7 +87,7 @@ struct BookApptView: View {
             .padding(.horizontal)
             .fullScreenCover(isPresented: $vm.bookingConfirmed, content: {
                 NavigationStack {
-                    ConfirmedBookingView()
+                    ConfirmedBookingView(currentDate: vm.selectedDate)
                         .environmentObject(vm)
                 }
             })

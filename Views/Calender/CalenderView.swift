@@ -18,7 +18,7 @@ struct CalenderView: View {
                     ForEach(vm.days, id: \.self) { day in
                         Text(day)
                             .font(.system(size: 20, weight: .semibold))
-                            .foregroundStyle(.indigo)
+                            .foregroundStyle(.secondary)
                             .frame(maxWidth: .infinity)
                     }
                 }
@@ -31,12 +31,13 @@ struct CalenderView: View {
                                         .environmentObject(vm)
                                 } label: {
                                     Text("\(value.day)")
+                                        .bold()
                                         .foregroundStyle(.black)
                                         .background(
                                             ZStack {
                                                 if value.date.monthDayYearFormat() == Date().monthDayYearFormat() {
                                                     Circle()
-                                                        .frame(width: 30, height: 30)
+                                                        .frame(width: 34, height: 34)
                                                         .foregroundStyle(.blue.opacity(0.2))
                                                 }
                                             })

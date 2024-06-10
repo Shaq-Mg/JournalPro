@@ -15,34 +15,39 @@ struct MakeApptView: View {
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 14) {
-                Text("\(vm.currentDate?.dayOfTheWeek() ?? "\(Date())")")
+            VStack(spacing: 30) {
+                Text(currentDate.dayOfTheWeek())
+                    .font(.system(size: 16, weight: .semibold))
                 ApptInputView(text: $name, title: "Name", placeholder: "Name")
                 
                 Text("Select a time")
                     .font(.system(size: 16, weight: .semibold))
                 
-                ForEach(vm.times, id: \.self) { time in
-                    Button {
-                        if !name.isEmpty {
-                            withAnimation {
-                                selectedDate = time
-                                vm.showConfirmedAppt = true
+                ScrollView {
+                    VStack(spacing: 20) {
+                        ForEach(vm.times, id: \.self) { time in
+                            Button {
+                                if !name.isEmpty {
+                                    withAnimation {
+                                        selectedDate = time
+                                        vm.showConfirmedAppt = true
+                                    }
+                                }
+                            } label: {
+                                Text(time.timeFromDate())
+                                    .bold()
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                    .background(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2))
                             }
                         }
-                    } label: {
-                        Text(time.timeFromDate())
-                            .bold()
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(RoundedRectangle(cornerRadius: 10).stroke())
                     }
                 }
             }
             .padding(.horizontal)
             .fullScreenCover(isPresented: $vm.showConfirmedAppt) {
                 NavigationStack {
-                    ConfirmedBookingView()
+                    ConfirmedBookingView(currentDate: currentDate)
                         .environmentObject(AppointmentViewModel())
                 }
             }

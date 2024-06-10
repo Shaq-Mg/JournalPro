@@ -59,7 +59,7 @@ extension Date {
     // Returns date as August 23, 2023
     func fullMonthDayYearFormat() -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM dd, yyyy"
+        formatter.dateFormat = "MMMM dd, yyyy"
         return formatter.string(from: self)
     }
     

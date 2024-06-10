@@ -10,25 +10,33 @@ import SwiftUI
 struct ConfirmedBookingView: View {
     @EnvironmentObject var vm: AppointmentViewModel
     @Environment(\.dismiss) private var dismiss
+    var currentDate: Date
     
     var body: some View {
         NavigationStack {
             VStack {
-                Text("\(vm.appointment?.date ?? Date())")
+                Text(currentDate.fullMonthDayYearFormat())
                 Spacer()
-                VStack(alignment: .leading, spacing: 16) {
-                    HStack(spacing: 10) {
-                        Image(systemName: "person")
+                VStack(alignment: .leading, spacing: 30) {
+                    HStack(alignment: .top, spacing: 10) {
+                        Image(systemName: "person.fill")
                         Text(vm.appointment?.name ?? "-")
                     }
-                    HStack(spacing: 10) {
-                        Image(systemName: "book")
-                        Text(vm.appointment?.service.title ?? "n/a")
+                    HStack(alignment: .top, spacing: 10) {
+                        Image(systemName: "book.fill")
+                        Text(vm.appointment?.service.title ?? "-")
                     }
-                    HStack(spacing: 10) {
-                        Image(systemName: "clock")
-                        Text("\(vm.appointment?.date ?? Date())")
+                    HStack(alignment: .top, spacing: 10) {
+                        Image(systemName: "clock.fill")
+                        Text(currentDate.dayViewDateFormat())
                     }
+                    HStack(alignment: .top, spacing: 10) {
+                        Image(systemName: "minus.circle.fill")
+                        Button("Cancel") {
+
+                        }
+                    }
+                    .foregroundStyle(.red)
                 }
                 .onAppear { vm.fetchAppointments() }
                 .font(.title2)
@@ -38,11 +46,8 @@ struct ConfirmedBookingView: View {
                 Button("Done") {
                     dismiss()
                 }
-                .foregroundStyle(.white)
-                .font(.headline)
-                .padding()
-                .background(.indigo)
-                .clipShape(RoundedRectangle(cornerRadius: 20))
+                .foregroundStyle(.indigo)
+                .font(.system(size: 20, weight: .semibold))
             }
             .padding(.horizontal)
         }
@@ -53,7 +58,7 @@ struct ConfirmedBookingView: View {
 struct ConfirmedBookingView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            ConfirmedBookingView()
+            ConfirmedBookingView(currentDate: Date())
                 .environmentObject(AppointmentViewModel())
         }
     }
