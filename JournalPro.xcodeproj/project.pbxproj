@@ -51,6 +51,8 @@
 		46E1E7822C0A54F100522BD4 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1E7812C0A54F100522BD4 /* Appointment.swift */; };
 		46E1E7842C0A550A00522BD4 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1E7832C0A550A00522BD4 /* Service.swift */; };
 		46E1E7862C0A554900522BD4 /* FirebaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1E7852C0A554900522BD4 /* FirebaseConstants.swift */; };
+		46F435C32C1733FD00E73814 /* ProfileMenuRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F435C22C1733FD00E73814 /* ProfileMenuRow.swift */; };
+		46F435C52C17350D00E73814 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F435C42C17350D00E73814 /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,8 @@
 		46E1E7812C0A54F100522BD4 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		46E1E7832C0A550A00522BD4 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		46E1E7852C0A554900522BD4 /* FirebaseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstants.swift; sourceTree = "<group>"; };
+		46F435C22C1733FD00E73814 /* ProfileMenuRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuRow.swift; sourceTree = "<group>"; };
+		46F435C42C17350D00E73814 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +182,7 @@
 				466BB02B2C16282000532457 /* CalenderHeaderView.swift */,
 				465A96C92C0F393E007BE421 /* CreateNavButton.swift */,
 				4627320A2C08AFAD0063524D /* InputView.swift */,
+				46F435C22C1733FD00E73814 /* ProfileMenuRow.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 		468322772BF38219006F9BD4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				46F435C42C17350D00E73814 /* MenuView.swift */,
 				460CE6752C0CC366009AFA53 /* Appointment */,
 				469267122C1379EA00498B4B /* Calender */,
 				468322822BF387BF006F9BD4 /* Client */,
@@ -499,12 +505,14 @@
 				468322842BF387D4006F9BD4 /* CreateClientView.swift in Sources */,
 				464F9F5A2C0DEE6B00357430 /* ConfirmedBookingView.swift in Sources */,
 				469267112C136C2200498B4B /* Date+Est.swift in Sources */,
+				46F435C52C17350D00E73814 /* MenuView.swift in Sources */,
 				466BB0302C16371E00532457 /* MakeApptView.swift in Sources */,
 				4692670E2C132B0E00498B4B /* SelectServiceView.swift in Sources */,
 				46139D6B2C0A7D1300EBFBD0 /* ClientViewModel.swift in Sources */,
 				46E1E7862C0A554900522BD4 /* FirebaseConstants.swift in Sources */,
 				46139D692C0A7C6D00EBFBD0 /* Client.swift in Sources */,
 				469267162C137B3500498B4B /* Calender.swift in Sources */,
+				46F435C32C1733FD00E73814 /* ProfileMenuRow.swift in Sources */,
 				46E1E7802C0A50DD00522BD4 /* SignInView.swift in Sources */,
 				462732102C08B2930063524D /* AppUser.swift in Sources */,
 				465A96C32C0F2687007BE421 /* ServiceViewModel.swift in Sources */,

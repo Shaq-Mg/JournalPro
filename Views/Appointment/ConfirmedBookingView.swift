@@ -13,45 +13,46 @@ struct ConfirmedBookingView: View {
     var currentDate: Date
     
     var body: some View {
-        NavigationStack {
-            VStack {
-                Text(currentDate.fullMonthDayYearFormat())
-                Spacer()
-                VStack(alignment: .leading, spacing: 30) {
-                    HStack(alignment: .top, spacing: 10) {
-                        Image(systemName: "person.fill")
-                        Text(vm.appointment?.name ?? "-")
-                    }
-                    HStack(alignment: .top, spacing: 10) {
-                        Image(systemName: "book.fill")
-                        Text(vm.appointment?.service.title ?? "-")
-                    }
-                    HStack(alignment: .top, spacing: 10) {
-                        Image(systemName: "clock.fill")
-                        Text(currentDate.dayViewDateFormat())
-                    }
-                    HStack(alignment: .top, spacing: 10) {
-                        Image(systemName: "minus.circle.fill")
-                        Button("Cancel") {
-
+        VStack {
+            MenuHeaderView(title: "Booking confirmed")
+            NavigationStack {
+                VStack {
+                    Text(currentDate.fullMonthDayYearFormat())
+                    Spacer()
+                    VStack(alignment: .leading, spacing: 30) {
+                        HStack(alignment: .top, spacing: 10) {
+                            Image(systemName: "person.fill")
+                            Text(vm.appointment?.name ?? "-")
                         }
+                        HStack(alignment: .top, spacing: 10) {
+                            Image(systemName: "book.fill")
+                            Text(vm.appointment?.service.title ?? "-")
+                        }
+                        HStack(alignment: .top, spacing: 10) {
+                            Image(systemName: "clock.fill")
+                            Text(currentDate.dayViewDateFormat())
+                        }
+                        HStack(alignment: .top, spacing: 10) {
+                            Image(systemName: "minus.circle.fill")
+                            Button("Cancel") {
+
+                            }
+                        }
+                        .foregroundStyle(.indigo)
                     }
-                    .foregroundStyle(.red)
+                    .onAppear { vm.fetchAppointments() }
+                    .font(.title2)
+                    
+                    Spacer()
+                    Button("Done") {
+                        dismiss()
+                    }
+                    .foregroundStyle(.indigo)
+                    .font(.system(size: 20, weight: .semibold))
                 }
-                .onAppear { vm.fetchAppointments() }
-                .font(.title2)
-                .fontWeight(.semibold)
-                
-                Spacer()
-                Button("Done") {
-                    dismiss()
-                }
-                .foregroundStyle(.indigo)
-                .font(.system(size: 20, weight: .semibold))
+                .padding(.horizontal)
             }
-            .padding(.horizontal)
         }
-        .navigationTitle("Booking confirmed")
     }
 }
 

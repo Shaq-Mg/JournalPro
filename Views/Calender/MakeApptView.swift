@@ -14,45 +14,47 @@ struct MakeApptView: View {
     var currentDate: Date
     
     var body: some View {
-        NavigationStack {
-            VStack(spacing: 30) {
-                Text(currentDate.dayOfTheWeek())
-                    .font(.system(size: 16, weight: .semibold))
-                ApptInputView(text: $name, title: "Name", placeholder: "Name")
-                
-                Text("Select a time")
-                    .font(.system(size: 16, weight: .semibold))
-                
-                ScrollView {
-                    VStack(spacing: 20) {
-                        ForEach(vm.times, id: \.self) { time in
-                            Button {
-                                if !name.isEmpty {
-                                    withAnimation {
-                                        selectedDate = time
-                                        vm.showConfirmedAppt = true
+        VStack {
+            MenuHeaderView(title: "Book appointment")
+            NavigationStack {
+                VStack(spacing: 30) {
+                    Text(currentDate.dayOfTheWeek())
+                        .font(.system(size: 16, weight: .semibold))
+                    ApptInputView(text: $name, title: "Name", placeholder: "Name")
+                    
+                    Text("Select a time")
+                        .font(.system(size: 16, weight: .semibold))
+                    
+                    ScrollView {
+                        VStack(spacing: 20) {
+                            ForEach(vm.times, id: \.self) { time in
+                                Button {
+                                    if !name.isEmpty {
+                                        withAnimation {
+                                            selectedDate = time
+                                            vm.showConfirmedAppt = true
+                                        }
                                     }
+                                } label: {
+                                    Text(time.timeFromDate())
+                                        .bold()
+                                        .padding()
+                                        .frame(maxWidth: .infinity)
+                                        .background(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2))
                                 }
-                            } label: {
-                                Text(time.timeFromDate())
-                                    .bold()
-                                    .padding()
-                                    .frame(maxWidth: .infinity)
-                                    .background(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2))
                             }
                         }
                     }
                 }
-            }
-            .padding(.horizontal)
-            .fullScreenCover(isPresented: $vm.showConfirmedAppt) {
-                NavigationStack {
-                    ConfirmedBookingView(currentDate: currentDate)
-                        .environmentObject(AppointmentViewModel())
+                .padding(.horizontal)
+                .fullScreenCover(isPresented: $vm.showConfirmedAppt) {
+                    NavigationStack {
+                        ConfirmedBookingView(currentDate: currentDate)
+                            .environmentObject(AppointmentViewModel())
+                    }
                 }
             }
         }
-        .navigationTitle("Book appointment")
     }
 }
 
