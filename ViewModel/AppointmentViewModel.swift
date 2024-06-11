@@ -29,7 +29,7 @@ final class AppointmentViewModel: ObservableObject {
                 if let snapshot = snapshot {
                     DispatchQueue.main.async {
                         self.appointments = snapshot.documents.map({ doc in
-                            return Appointment(name: doc["name"] as! String, service: Service(id: doc.documentID, title: doc["title"] as? String ?? "n/a", price: doc["price"] as? String ?? "n/a", duration: doc["duration"] as? String ?? ""), date: doc["date"] as? Date ?? Date())
+                            return Appointment(name: doc["name"] as? String ?? "", service: Service(id: doc.documentID, title: doc["title"] as? String ?? "n/a", price: doc["price"] as? String ?? "n/a", duration: doc["duration"] as? String ?? ""), date: doc["date"] as? Date ?? Date())
                         })
                     }
                 }

@@ -14,4 +14,8 @@ struct Appointment: Identifiable, Codable {
     let name: String
     let service: Service
     let date: Date
+    
+    enum codingKeys: String, CodingKey {
+        case name, service, date
+    }
 }
