@@ -11,7 +11,7 @@ struct MenuView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                MenuHeaderView(title: "More")
+                MenuHeaderView(title: "Menu")
                 List {
                     Section("Profile details") {
                         ProfileMenuRow(image: "person.fill", title: "Name")
@@ -24,8 +24,8 @@ struct MenuView: View {
                     }
                     Section("Settings"){
                         ProfileMenuRow(image: "moon.fill", title: "Appearance")
-                        ProfileMenuRow(image: "iphone", title: "Subscription")
-                        ProfileMenuRow(image: "bell.badge.fill", title: "Notification")
+                        ProfileMenuRow(image: "iphone", title: "Subscriptions")
+                        ProfileMenuRow(image: "bell.badge.fill", title: "Notifications")
                         ProfileMenuRow(image: "message.fill", title: "Contact us")
                         ProfileMenuRow(image: "shield.righthalf.filled", title: "Privacy policy")
                     }

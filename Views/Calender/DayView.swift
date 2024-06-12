@@ -29,7 +29,7 @@ struct DayView: View {
                                 }
                                 Spacer()
                                 
-                                Text("\(appointment.date)")
+                                Text("\(appointment.date.dayViewDateFormat())")
                                     .font(.system(size: 10, weight: .semibold))
                             }
                             .font(.system(size: 20, weight: .semibold))

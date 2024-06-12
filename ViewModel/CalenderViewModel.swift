@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift
 
 class CalenderViewModel: ObservableObject {
     @Published var availableDates = [Date]()
-    @Published var availableDays = Set<String>()
+    @Published var availableDays: Set<String> = []
     @Published var selectedMonth = 0
     @Published var showConfirmedAppt = false
     @Published var currentDate: Date?
@@ -32,7 +32,7 @@ class CalenderViewModel: ObservableObject {
                     availableDays = Set(availableDates.map({ $0.monthDayYearFormat() }))
                 }
             } catch {
-            // handle error here
+                // handle error here
             }
         }
     }
@@ -84,8 +84,9 @@ class CalenderViewModel: ObservableObject {
                     var currentDate = calender.date(from: DateComponents(year: calender.component(.year, from: Date()), month: calender.component(.month, from: Date()), day: calender.component(.day, from: Date()) + (hour.day - currentWeekDay), hour: hour.start))
                     
                     while let nextDate = calender.date(byAdding: .minute, value: 15, to: currentDate ?? Date()),
-                          calender.component(.hour, from: nextDate) < hour.end {
-                        if !takenAppts.contains(currentDate ?? Date()) && currentDate ?? Date() > Date() {
+                          calender.component(.hour, from: nextDate) <= hour.end {
+                        
+                        if !takenAppts.contains(currentDate ?? Date()) && currentDate ?? Date() > Date() && calender.component(.hour, from: currentDate ?? Date()) != hour.end {
                             timeSlots.append(currentDate ?? Date())
                         }
                         currentDate = nextDate
@@ -94,5 +95,9 @@ class CalenderViewModel: ObservableObject {
             }
         }
         return []
+    }
+    
+    func bookAppointment(name: String, date: Date) async throws {
+        
     }
 }

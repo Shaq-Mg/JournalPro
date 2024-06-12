@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MakeApptView: View {
     @EnvironmentObject var vm: CalenderViewModel
+    @State var dates = [Date]()
     @State var selectedDate = Date()
     @State private var name = ""
     var currentDate: Date
@@ -37,15 +38,17 @@ struct MakeApptView: View {
                                     }
                                 } label: {
                                     Text(time.timeFromDate())
+                                        .foregroundStyle(.black)
                                         .bold()
                                         .padding()
                                         .frame(maxWidth: .infinity)
-                                        .background(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2))
+                                        .background(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2).foregroundStyle(.indigo))
                                 }
                             }
                         }
                     }
                 }
+                .onAppear { self.dates = vm.availableDates.filter({ $0.monthDayYearFormat() == currentDate.monthDayYearFormat() }) }
                 .padding(.horizontal)
                 .fullScreenCover(isPresented: $vm.showConfirmedAppt) {
                     NavigationStack {

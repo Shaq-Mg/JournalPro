@@ -26,20 +26,30 @@ struct CalenderView: View {
                     ForEach(vm.fetchDates()) { value in
                         VStack {
                             if value.day != -1 {
+                                let hasAppts = vm.availableDays.contains(value.date.monthDayYearFormat())
                                 NavigationLink {
                                     MakeApptView(currentDate: value.date)
                                         .environmentObject(vm)
                                 } label: {
                                     Text("\(value.day)")
                                         .bold()
-                                        .foregroundStyle(.black)
+                                        .foregroundStyle(value.date.monthDayYearFormat() == Date().monthDayYearFormat() ? .white : .black)
                                         .background(
-                                            ZStack {
-                                                if value.date.monthDayYearFormat() == Date().monthDayYearFormat() {
-                                                    Circle()
-                                                        .frame(width: 34, height: 34)
-                                                        .foregroundStyle(.blue.opacity(0.2))
+                                            ZStack(alignment: .bottom) {
+                                                Circle()
+                                                    .frame(width: 34, height: 34)
+                                                    .foregroundStyle(.clear)
+                                                ZStack {
+                                                    if value.date.monthDayYearFormat() == Date().monthDayYearFormat() {
+                                                        Circle()
+                                                            .frame(width: 36, height: 36)
+                                                            .foregroundStyle(.indigo)
+                                                            .shadow(radius: 1)
+                                                    }
                                                 }
+                                                Circle()
+                                                    .frame(width: 5, height: 5)
+                                                    .foregroundStyle(hasAppts ? .indigo : .clear)
                                             })
                                 }
                                 
