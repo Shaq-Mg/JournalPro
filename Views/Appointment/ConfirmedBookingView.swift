@@ -14,7 +14,7 @@ struct ConfirmedBookingView: View {
     
     var body: some View {
         VStack {
-            MenuHeaderView(title: "Booking confirmed")
+            MenuHeaderView(isPressed: { }, title: "Booking confirmed")
             NavigationStack {
                 VStack {
                     Text(currentDate.fullMonthDayYearFormat())

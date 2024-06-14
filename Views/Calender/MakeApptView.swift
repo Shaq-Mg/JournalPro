@@ -16,7 +16,7 @@ struct MakeApptView: View {
     
     var body: some View {
         VStack {
-            MenuHeaderView(title: "Book appointment")
+            MenuHeaderView(isNavigate: true, isPressed: { }, title: "Enter details")
             NavigationStack {
                 VStack(spacing: 30) {
                     Text(currentDate.dayOfTheWeek())
@@ -42,7 +42,7 @@ struct MakeApptView: View {
                                         .bold()
                                         .padding()
                                         .frame(maxWidth: .infinity)
-                                        .background(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2).foregroundStyle(.indigo))
+                                        .background(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 4).foregroundStyle(.indigo))
                                 }
                             }
                         }

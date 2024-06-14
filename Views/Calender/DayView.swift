@@ -12,7 +12,7 @@ struct DayView: View {
     @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack {
-            MenuHeaderView(title: "Date")
+            MenuHeaderView(isNavigate: true, isPressed: { dismiss() }, title: "Day")
             NavigationStack {
                 List {
                     Section("Bookings today") {
@@ -37,15 +37,6 @@ struct DayView: View {
                     }
                 }
                 .onAppear { vm.fetchAppointments() }
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("Cancel") {
-                            dismiss()
-                        }
-                        .font(.headline)
-                        .foregroundStyle(.white)
-                    }
-                }
             }
         }
     }

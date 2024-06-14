@@ -11,7 +11,7 @@ struct MenuView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                MenuHeaderView(title: "Menu")
+                MenuHeaderView(isPressed: { }, title: "Menu")
                 List {
                     Section("Profile details") {
                         ProfileMenuRow(image: "person.fill", title: "Name")
@@ -48,12 +48,38 @@ struct MenuView_Previews: PreviewProvider {
 }
 
 struct MenuHeaderView: View {
+    var isNavigate = false
+    var isPressed: () -> ()
     let title: String
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text(title)
-                .foregroundStyle(.white)
-                .font(.system(size: 20, weight: .semibold))
+        VStack {
+            if isNavigate {
+                HStack {
+                    Text("000000")
+                        .foregroundStyle(.clear)
+                    Spacer()
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text(title)
+                            .foregroundStyle(.white)
+                            .font(.system(size: 20, weight: .semibold))
+                    }
+                    Spacer()
+                    Button {
+                        isPressed()
+                    } label: {
+                        Text("Cancel")
+                            .font(.headline)
+                            .foregroundStyle(.white)
+                    }
+                    
+                }
+            } else {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(title)
+                        .foregroundStyle(.white)
+                        .font(.system(size: 20, weight: .semibold))
+                }
+            }
         }
         .padding()
         .frame(maxWidth: .infinity)
