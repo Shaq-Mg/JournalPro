@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		460CE6742C0CB297009AFA53 /* AppointmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460CE6732C0CB297009AFA53 /* AppointmentViewModel.swift */; };
 		460CE6772C0CC37E009AFA53 /* BookApptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460CE6762C0CC37E009AFA53 /* BookApptView.swift */; };
+		4612EB6A2C1CF5B70038BDA7 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612EB692C1CF5B70038BDA7 /* MainTabView.swift */; };
 		461306A12C1C75AA002A4FB5 /* ApptChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461306A02C1C75AA002A4FB5 /* ApptChartView.swift */; };
 		461306A32C1C761C002A4FB5 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461306A22C1C761C002A4FB5 /* Journal.swift */; };
 		461306A52C1C9DC8002A4FB5 /* MainChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461306A42C1C9DC8002A4FB5 /* MainChartView.swift */; };
@@ -80,6 +81,7 @@
 /* Begin PBXFileReference section */
 		460CE6732C0CB297009AFA53 /* AppointmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentViewModel.swift; sourceTree = "<group>"; };
 		460CE6762C0CC37E009AFA53 /* BookApptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookApptView.swift; sourceTree = "<group>"; };
+		4612EB692C1CF5B70038BDA7 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		461306A02C1C75AA002A4FB5 /* ApptChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApptChartView.swift; sourceTree = "<group>"; };
 		461306A22C1C761C002A4FB5 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 		461306A42C1C9DC8002A4FB5 /* MainChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainChartView.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				466BB02B2C16282000532457 /* CalenderHeaderView.swift */,
 				465A96C92C0F393E007BE421 /* CreateNavButton.swift */,
 				4627320A2C08AFAD0063524D /* InputView.swift */,
+				4612EB692C1CF5B70038BDA7 /* MainTabView.swift */,
 				46F435C22C1733FD00E73814 /* ProfileMenuRow.swift */,
 			);
 			path = Components;
@@ -526,6 +529,7 @@
 				4683224E2BF381E5006F9BD4 /* JournalProApp.swift in Sources */,
 				462732122C08B50C0063524D /* SignInViewModel.swift in Sources */,
 				468322842BF387D4006F9BD4 /* CreateClientView.swift in Sources */,
+				4612EB6A2C1CF5B70038BDA7 /* MainTabView.swift in Sources */,
 				464F9F5A2C0DEE6B00357430 /* ConfirmedBookingView.swift in Sources */,
 				469267112C136C2200498B4B /* Date+Est.swift in Sources */,
 				46F435C52C17350D00E73814 /* MenuView.swift in Sources */,

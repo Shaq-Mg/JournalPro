@@ -1,0 +1,46 @@
+//
+//  MainTabView.swift
+//  JournalPro
+//
+//  Created by Shaquille McGregor on 14/06/2024.
+//
+
+import SwiftUI
+
+struct MainTabView: View {
+    var body: some View {
+        TabView {
+            MainChartView()
+                .environmentObject(AppointmentViewModel())
+                .tabItem {
+                    Image(systemName: "person")
+                    Text("Home")
+                }
+            ServicesView()
+                .environmentObject(ServiceViewModel())
+                .tabItem {
+                    Image(systemName: "book.closed")
+                    Text("Service")
+                }
+            CalenderView()
+                .environmentObject(CalenderViewModel())
+                .tabItem {
+                    Image(systemName: "calendar")
+                    Text("Bookings")
+                }
+            MenuView()
+                .environmentObject(SignInViewModel(authManager: AuthManager()))
+                .tabItem {
+                    Image(systemName: "ellipsis")
+                    Text("Menu")
+                }
+        }
+        .tint(.indigo)
+    }
+}
+
+struct MainTabView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainTabView()
+    }
+}
