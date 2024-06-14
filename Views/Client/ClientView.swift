@@ -34,19 +34,11 @@ struct ClientView: View {
                 }
             })
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         isShowNewClient.toggle()
                     } label: {
                         CreateNavButton()
-                    }
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Menu {
-                        
-                    } label: {
-                        Image(systemName: "ellipsis")
-                            .rotationEffect(Angle(degrees: -90))
                     }
                 }
             }

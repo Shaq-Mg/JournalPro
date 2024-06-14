@@ -71,7 +71,6 @@ struct MenuHeaderView: View {
                             .font(.headline)
                             .foregroundStyle(.white)
                     }
-                    
                 }
             } else {
                 VStack(alignment: .leading, spacing: 6) {

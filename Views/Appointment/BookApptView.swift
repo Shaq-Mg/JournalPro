@@ -17,7 +17,7 @@ struct BookApptView: View {
                 VStack(alignment: .leading) {
                     Text("Name")
                         .font(.callout)
-                    TextField("Name (optional)", text: $vm.name)
+                    TextField("Name", text: $vm.name)
                         .font(.title2)
                         .textFieldStyle(.roundedBorder)
                         .frame(maxWidth: .infinity)
@@ -26,30 +26,6 @@ struct BookApptView: View {
                 Divider()
                 
                 VStack(alignment: .leading) {
-                    HStack {
-                        NavigationLink {
-                            SelectClientView(didSelectClient: { client in
-                                vm.client = client })
-                            .environmentObject(vm)
-                        } label: {
-                            Text("Select client")
-                                .font(.system(size: 16, weight: .bold))
-                                .foregroundStyle(.white)
-                                .padding(12)
-                                .background(.indigo)
-                                .clipShape(RoundedRectangle(cornerRadius: 20))
-                        }
-                        Spacer()
-                        if let client = vm.client {
-                            Text(client.name)
-                                .font(.system(size: 12, weight: .semibold))
-                                .padding(8)
-                                .overlay(RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 1))
-                        }
-                    }
-                    
-                    
-                    Divider()
                     HStack {
                         NavigationLink {
                             SelectServiceView(didSelectService: { service in
@@ -64,7 +40,6 @@ struct BookApptView: View {
                                 .clipShape(RoundedRectangle(cornerRadius: 20))
                         }
                         Spacer()
-                        Spacer()
                         if let service = vm.service {
                             Text(service.title)
                                 .font(.system(size: 12, weight: .semibold))
@@ -76,7 +51,7 @@ struct BookApptView: View {
                 }
                 
                 Button {
-                    vm.save(name: vm.name, service: vm.appointment?.service ?? Service(id: "", title: "", price: "", duration: "0"), date: vm.selectedDate)
+                    vm.save(name: vm.name, service: vm.service ?? Service(id: "", title: "", price: "", duration: "0"), date: vm.selectedDate)
                     vm.bookingConfirmed.toggle()
                 } label: {
                     Text("Confirm").bold()

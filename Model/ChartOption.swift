@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Chart: CaseIterable {
+enum ChartOption: CaseIterable {
 case last7Days, next7Days
     
     var title: String {

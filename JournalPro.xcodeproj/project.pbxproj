@@ -13,7 +13,6 @@
 		461306A32C1C761C002A4FB5 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461306A22C1C761C002A4FB5 /* Journal.swift */; };
 		461306A52C1C9DC8002A4FB5 /* MainChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461306A42C1C9DC8002A4FB5 /* MainChartView.swift */; };
 		461306A72C1CA121002A4FB5 /* ApptRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461306A62C1CA121002A4FB5 /* ApptRowView.swift */; };
-		461306A92C1CA576002A4FB5 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461306A82C1CA576002A4FB5 /* Chart.swift */; };
 		46139D692C0A7C6D00EBFBD0 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46139D682C0A7C6D00EBFBD0 /* Client.swift */; };
 		46139D6B2C0A7D1300EBFBD0 /* ClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46139D6A2C0A7D1300EBFBD0 /* ClientViewModel.swift */; };
 		461F753E2C18609D0063505F /* Hours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461F753D2C18609D0063505F /* Hours.swift */; };
@@ -85,7 +84,6 @@
 		461306A22C1C761C002A4FB5 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 		461306A42C1C9DC8002A4FB5 /* MainChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainChartView.swift; sourceTree = "<group>"; };
 		461306A62C1CA121002A4FB5 /* ApptRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApptRowView.swift; sourceTree = "<group>"; };
-		461306A82C1CA576002A4FB5 /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		46139D682C0A7C6D00EBFBD0 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		46139D6A2C0A7D1300EBFBD0 /* ClientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViewModel.swift; sourceTree = "<group>"; };
 		461F753D2C18609D0063505F /* Hours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hours.swift; sourceTree = "<group>"; };
@@ -322,7 +320,6 @@
 				46E1E7812C0A54F100522BD4 /* Appointment.swift */,
 				4627320F2C08B2930063524D /* AppUser.swift */,
 				469267152C137B3500498B4B /* Calender.swift */,
-				461306A82C1CA576002A4FB5 /* Chart.swift */,
 				46139D682C0A7C6D00EBFBD0 /* Client.swift */,
 				461F753D2C18609D0063505F /* Hours.swift */,
 				461306A22C1C761C002A4FB5 /* Journal.swift */,
@@ -526,7 +523,6 @@
 				466BB0282C1621E900532457 /* ScheduleView.swift in Sources */,
 				4627320B2C08AFAD0063524D /* InputView.swift in Sources */,
 				466BB02A2C16261900532457 /* CalenderViewModel.swift in Sources */,
-				461306A92C1CA576002A4FB5 /* Chart.swift in Sources */,
 				4683224E2BF381E5006F9BD4 /* JournalProApp.swift in Sources */,
 				462732122C08B50C0063524D /* SignInViewModel.swift in Sources */,
 				468322842BF387D4006F9BD4 /* CreateClientView.swift in Sources */,

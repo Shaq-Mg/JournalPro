@@ -39,9 +39,9 @@ final class AppointmentViewModel: ObservableObject {
         }
     }
     
-    func save(name: String?, service: Service, date: Date) {
+    func save(name: String, service: Service, date: Date) {
         db.collection("appointments")
-            .addDocument(data: ["name": name ?? "-", "service": service, "date": date]) { error in
+            .addDocument(data: ["name": name, "service": service, "date": date]) { error in
                 if error == nil {
                     self.fetchAppointments()
                     print("Successfully to saved appointment to firestore")

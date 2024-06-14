@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-struct Journal: Identifiable {
+struct Journal: Identifiable, Hashable {
     @DocumentID var id: String?
     let booking: Int
     let date: Date
