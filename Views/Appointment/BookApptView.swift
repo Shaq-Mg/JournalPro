@@ -51,8 +51,10 @@ struct BookApptView: View {
                 }
                 
                 Button {
-                    vm.persistAppt(name: vm.name, service: vm.service ?? Service(title: "", price: "", duration: ""), date: vm.selectedDate)
-                    vm.bookingConfirmed.toggle()
+                    if !vm.name.isEmpty && vm.service != nil {
+                        vm.persistAppt()
+                        vm.bookingConfirmed.toggle()
+                    }
                 } label: {
                     Text("Confirm").bold()
                 }

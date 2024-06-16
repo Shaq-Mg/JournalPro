@@ -22,11 +22,11 @@ struct ConfirmedBookingView: View {
                     VStack(alignment: .leading, spacing: 30) {
                         HStack(alignment: .top, spacing: 10) {
                             Image(systemName: "person.fill")
-                            Text(vm.appointment?.name ?? "-")
+                            Text(vm.name)
                         }
                         HStack(alignment: .top, spacing: 10) {
                             Image(systemName: "book.fill")
-                            Text(vm.appointment?.service.title ?? "-")
+                            Text(vm.service?.title ?? "-")
                         }
                         HStack(alignment: .top, spacing: 10) {
                             Image(systemName: "clock.fill")
@@ -45,6 +45,8 @@ struct ConfirmedBookingView: View {
                     
                     Spacer()
                     Button("Done") {
+                        vm.name = ""
+                        vm.service = nil
                         dismiss()
                     }
                     .foregroundStyle(.indigo)
