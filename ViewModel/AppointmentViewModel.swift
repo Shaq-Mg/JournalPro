@@ -18,7 +18,7 @@ final class AppointmentViewModel: ObservableObject {
     @Published var selectedDate = Date()
     @Published var appointment: Appointment? = nil
     @Published var client: Client? = nil
-    @Published var service: Service? = nil
+    @Published var service: Service?
     @Published var bookingConfirmed = false
     
     let db = Firestore.firestore()
@@ -39,17 +39,11 @@ final class AppointmentViewModel: ObservableObject {
         }
     }
     
-    func save(name: String, service: Service, date: Date) {
-        db.collection("appointments")
-            .addDocument(data: ["name": name, "service": service, "date": date]) { error in
-                if error == nil {
-                    self.fetchAppointments()
-                    print("Successfully to saved appointment to firestore")
-                } else {
-                    // handle error here
-                    print("Failed to save appointment to firestore")
-                }
-            }
+    func persistAppt() {
+        guard let docId = appointment?.id else { return }
+        Task {
+            try db.collection("appointments").document(docId).setData(from: appointment)
+        }
     }
     
     func update(appointmentToUpdate: Appointment) {

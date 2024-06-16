@@ -13,13 +13,13 @@ struct MainTabView: View {
             MainChartView()
                 .environmentObject(AppointmentViewModel())
                 .tabItem {
-                    Image(systemName: "person")
+                    Image(systemName: "house")
                     Text("Home")
                 }
             ServicesView()
                 .environmentObject(ServiceViewModel())
                 .tabItem {
-                    Image(systemName: "book.closed")
+                    Image(systemName: "pencil.line")
                     Text("Service")
                 }
             CalenderView()

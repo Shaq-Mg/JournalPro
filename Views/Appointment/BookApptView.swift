@@ -40,8 +40,8 @@ struct BookApptView: View {
                                 .clipShape(RoundedRectangle(cornerRadius: 20))
                         }
                         Spacer()
-                        if let service = vm.service {
-                            Text(service.title)
+                        if (vm.service != nil) {
+                            Text(vm.service?.title ?? "")
                                 .font(.system(size: 12, weight: .semibold))
                                 .padding(8)
                                 .overlay(RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 1))
@@ -51,7 +51,7 @@ struct BookApptView: View {
                 }
                 
                 Button {
-                    vm.save(name: vm.name, service: vm.service ?? Service(id: "", title: "", price: "", duration: "0"), date: vm.selectedDate)
+                    vm.persistAppt(name: vm.name, service: vm.service ?? Service(title: "", price: "", duration: ""), date: vm.selectedDate)
                     vm.bookingConfirmed.toggle()
                 } label: {
                     Text("Confirm").bold()

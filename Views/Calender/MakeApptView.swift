@@ -16,7 +16,6 @@ struct MakeApptView: View {
     
     var body: some View {
         VStack {
-            MenuHeaderView(isNavigate: true, isPressed: { }, title: "Enter details")
             NavigationStack {
                 VStack(spacing: 30) {
                     Text(currentDate.dayOfTheWeek())
