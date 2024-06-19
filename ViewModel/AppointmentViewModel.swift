@@ -39,16 +39,21 @@ final class AppointmentViewModel: ObservableObject {
         }
     }
     
-    func persistAppt() {
-        guard let docId = appointment?.id else { return }
-        Task {
-            try db.collection("appointments").document(docId).setData(from: appointment)
+    func createAppt(name: String, date: Date) {
+        let apptData: [String: Any] = ["name": name, "date": date]
+        
+        db.collection("appointments").addDocument(data: apptData) { error in
+            if error == nil {
+                self.fetchAppointments()
+            } else {
+                print("Failed to store appointment to firestore")
+            }
         }
     }
     
     func update(appointmentToUpdate: Appointment) {
-
-        db.collection("appointments").document(appointmentToUpdate.id ?? "").setData(["name": appointmentToUpdate.name, "service": appointmentToUpdate.service, "date": appointmentToUpdate.date], merge: true)
+        
+        db.collection("appointments").document(appointmentToUpdate.id ?? "").updateData(["name": appointmentToUpdate.name, "service": appointmentToUpdate.service, "date": appointmentToUpdate.date])
     }
     
     func delete(appointmentToDelete: Client) {

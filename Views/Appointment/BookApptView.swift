@@ -52,7 +52,7 @@ struct BookApptView: View {
                 
                 Button {
                     if !vm.name.isEmpty && vm.service != nil {
-                        vm.persistAppt()
+                        vm.createAppt(name: vm.name, date: vm.selectedDate)
                         vm.bookingConfirmed.toggle()
                     }
                 } label: {
