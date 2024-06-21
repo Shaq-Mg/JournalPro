@@ -10,6 +10,7 @@ import SwiftUI
 struct MainChartView: View {
     @EnvironmentObject var vm: AppointmentViewModel
     var body: some View {
+ 
         VStack(spacing: 50) {
             MenuHeaderView(isPressed: { }, title: "Home")
             VStack(spacing: 20) {

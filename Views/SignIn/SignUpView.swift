@@ -1,15 +1,15 @@
 //
-//  SignInView.swift
+//  SignUpView.swift
 //  JournalPro
 //
-//  Created by Shaquille McGregor on 31/05/2024.
+//  Created by Shaquille McGregor on 21/06/2024.
 //
 
 import SwiftUI
 
-struct SignInView: View {
+struct SignUpView: View {
+    @Environment(\.dismiss) var dismiss
     @ObservedObject var viewModel: SignInViewModel
-    @State private var showSignedInView = false
     
     init(authManager: AuthManager) {
         _viewModel = ObservedObject(wrappedValue: SignInViewModel(authManager: authManager))
@@ -21,14 +21,23 @@ struct SignInView: View {
                 Color.indigo.opacity(0.8).ignoresSafeArea()
                 VStack(spacing: 20) {
                     VStack(spacing: 8) {
+                        
                         InputView(text: $viewModel.email, title: "Email", placeholder: "User@hotmail.com")
                         
                         InputView(text: $viewModel.password, title: "Password", placeholder: "password", isSecureField: true)
+                        
+                        InputView(text: $viewModel.confirmPassword, title: "Confirm password", placeholder: "Confirm password", isSecureField: true)
                     }
                     Button {
-                        
+                        Task {
+                            try await viewModel.signUp()
+                            dismiss()
+                            viewModel.email = ""
+                            viewModel.password = ""
+                            viewModel.confirmPassword = ""
+                        }
                     } label: {
-                        Text("Sign In")
+                        Text("Sign Up")
                             .font(.system(size: 20).bold())
                             .foregroundStyle(.white)
                     }
@@ -37,8 +46,8 @@ struct SignInView: View {
                     .background(.black)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                     
-                    NavigationLink("Dont have a account? Sign up") {
-                        SignUpView(authManager: viewModel.authManager)
+                    Button("Already have a existing account? Sign in") {
+                        dismiss()
                     }
                     .font(.callout)
                     .foregroundStyle(.black)
@@ -46,25 +55,19 @@ struct SignInView: View {
                         .foregroundStyle(.white)
                 }
                 .padding(.horizontal)
-                .onAppear {
-                    let authUser = try? viewModel.authManager.fetchAuthUser()
-                    self.showSignedInView = authUser == nil
-                }
-                .fullScreenCover(isPresented: $showSignedInView) {
-                    HomeView()
-                }
             }
         }
-        .navigationTitle("Sign In")
+        .navigationTitle("Create account")
         .navigationBarBackButtonHidden(true)
     }
 }
-struct SignInView_Previews: PreviewProvider {
+
+struct SignUpView_Previews: PreviewProvider {
     static let authManager = AuthManager()
     
     static var previews: some View {
         NavigationStack {
-            SignInView(authManager: authManager)
+            SignUpView(authManager: authManager)
         }
     }
 }

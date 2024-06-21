@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MenuView: View {
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -31,6 +32,7 @@ struct MenuView: View {
                     }
                     Section("Account") {
                         ProfileMenuRow(image: "lock.fill", title: "Sign out")
+                            .onTapGesture {  }
                         ProfileMenuRow(image: "minus.circle.fill", title: "Delete account")
                     }
                 }
@@ -55,7 +57,7 @@ struct MenuHeaderView: View {
         VStack {
             if isNavigate {
                 HStack {
-                    Text("000000")
+                    Text("Cancel")
                         .foregroundStyle(.clear)
                     Spacer()
                     VStack(alignment: .leading, spacing: 6) {
