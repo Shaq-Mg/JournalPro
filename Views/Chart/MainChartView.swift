@@ -9,8 +9,9 @@ import SwiftUI
 
 struct MainChartView: View {
     @EnvironmentObject var vm: AppointmentViewModel
+
     var body: some View {
- 
+        
         VStack(spacing: 50) {
             MenuHeaderView(isPressed: { }, title: "Home")
             VStack(spacing: 20) {
@@ -20,9 +21,11 @@ struct MainChartView: View {
                         .font(.system(size: 20, weight: .semibold))
                     
                     ZStack(alignment: .bottomTrailing) {
-                        List {
-                            ForEach(vm.appointments) { appt in
-                                ApptRowView(appointment: appt)
+                        ScrollView {
+                            List {
+                                ForEach(vm.appointments) { appt in
+                                    ApptRowView(appointment: appt)
+                                }
                             }
                         }
                         Button {
@@ -36,7 +39,7 @@ struct MainChartView: View {
                         .padding()
                         .background(RoundedRectangle(cornerRadius: 20).foregroundStyle(.black))
                         .padding()
-
+                        
                     }
                 }
             }

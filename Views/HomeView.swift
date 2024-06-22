@@ -16,12 +16,6 @@ struct HomeView: View {
                     Image(systemName: "house")
                     Text("Home")
                 }
-            ServicesView()
-                .environmentObject(ServiceViewModel())
-                .tabItem {
-                    Image(systemName: "pencil.line")
-                    Text("Service")
-                }
             CalenderView()
                 .environmentObject(CalenderViewModel())
                 .tabItem {
@@ -33,6 +27,12 @@ struct HomeView: View {
                 .tabItem {
                     Image(systemName: "ellipsis")
                     Text("Menu")
+                }
+            AccountView(viewModel: SettingsViewModel(authManager: AuthManager()))
+                .environmentObject(SettingsViewModel(authManager: AuthManager()))
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Account")
                 }
         }
         .tint(.indigo)

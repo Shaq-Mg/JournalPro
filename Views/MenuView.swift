@@ -14,11 +14,8 @@ struct MenuView: View {
             VStack {
                 MenuHeaderView(isPressed: { }, title: "Menu")
                 List {
-                    Section("Profile details") {
-                        ProfileMenuRow(image: "person.fill", title: "Name")
-                        ProfileMenuRow(image: "envelope.fill", title: "Email")
-                    }
                     Section("Business") {
+                        ProfileMenuRow(image: "calendar", title: "Bookings")
                         ProfileMenuRow(image: "person.2.fill", title: "Clients")
                         ProfileMenuRow(image: "handbag.fill", title: "Services")
                         ProfileMenuRow(image: "personalhotspot", title: "Business page")
@@ -29,11 +26,6 @@ struct MenuView: View {
                         ProfileMenuRow(image: "bell.badge.fill", title: "Notifications")
                         ProfileMenuRow(image: "message.fill", title: "Contact us")
                         ProfileMenuRow(image: "shield.righthalf.filled", title: "Privacy policy")
-                    }
-                    Section("Account") {
-                        ProfileMenuRow(image: "lock.fill", title: "Sign out")
-                            .onTapGesture {  }
-                        ProfileMenuRow(image: "minus.circle.fill", title: "Delete account")
                     }
                 }
             }
