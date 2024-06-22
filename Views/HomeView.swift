@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    let authManager: AuthManager
     var body: some View {
         TabView {
             MainChartView()
@@ -23,13 +24,13 @@ struct HomeView: View {
                     Text("Bookings")
                 }
             MenuView()
-                .environmentObject(SignInViewModel(authManager: AuthManager()))
+                .environmentObject(SignInViewModel(authManager: authManager))
                 .tabItem {
                     Image(systemName: "ellipsis")
                     Text("Menu")
                 }
-            AccountView(viewModel: SettingsViewModel(authManager: AuthManager()))
-                .environmentObject(SettingsViewModel(authManager: AuthManager()))
+            AccountView(viewModel: SettingsViewModel(authManager: authManager))
+                .environmentObject(SettingsViewModel(authManager: authManager))
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Account")
@@ -40,7 +41,8 @@ struct HomeView: View {
 }
 
 struct HomeView_Previews: PreviewProvider {
+    static let authManager = AuthManager()
     static var previews: some View {
-        HomeView()
+        HomeView(authManager: authManager)
     }
 }

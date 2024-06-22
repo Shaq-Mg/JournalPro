@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SignInView: View {
     @ObservedObject var viewModel: SignInViewModel
-    @State private var showSignedInView = false
     
     init(authManager: AuthManager) {
         _viewModel = ObservedObject(wrappedValue: SignInViewModel(authManager: authManager))
@@ -46,13 +45,6 @@ struct SignInView: View {
                         .foregroundStyle(.white)
                 }
                 .padding(.horizontal)
-                .onAppear {
-                    let authUser = try? viewModel.authManager.fetchAuthUser()
-                    self.showSignedInView = authUser == nil
-                }
-                .fullScreenCover(isPresented: $showSignedInView) {
-                    HomeView()
-                }
             }
         }
         .navigationTitle("Sign In")

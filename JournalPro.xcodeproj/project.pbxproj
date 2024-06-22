@@ -61,6 +61,7 @@
 		46E1E7862C0A554900522BD4 /* FirebaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1E7852C0A554900522BD4 /* FirebaseConstants.swift */; };
 		46F435C32C1733FD00E73814 /* ProfileMenuRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F435C22C1733FD00E73814 /* ProfileMenuRow.swift */; };
 		46F435C52C17350D00E73814 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F435C42C17350D00E73814 /* MenuView.swift */; };
+		46F777472C2780EA00FF04F0 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F777462C2780EA00FF04F0 /* RootView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		46E1E7852C0A554900522BD4 /* FirebaseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstants.swift; sourceTree = "<group>"; };
 		46F435C22C1733FD00E73814 /* ProfileMenuRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuRow.swift; sourceTree = "<group>"; };
 		46F435C42C17350D00E73814 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		46F777462C2780EA00FF04F0 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				461F058C2C271A2B00186C5F /* AccountView.swift */,
+				46F777462C2780EA00FF04F0 /* RootView.swift */,
 				46E1E77F2C0A50DD00522BD4 /* SignInView.swift */,
 				46198E8C2C25F9E6003ED22A /* SignUpView.swift */,
 			);
@@ -538,6 +541,7 @@
 				4612EB6A2C1CF5B70038BDA7 /* HomeView.swift in Sources */,
 				464F9F5A2C0DEE6B00357430 /* ConfirmedBookingView.swift in Sources */,
 				469267112C136C2200498B4B /* Date+Est.swift in Sources */,
+				46F777472C2780EA00FF04F0 /* RootView.swift in Sources */,
 				46F435C52C17350D00E73814 /* MenuView.swift in Sources */,
 				466BB0302C16371E00532457 /* MakeApptView.swift in Sources */,
 				4692670E2C132B0E00498B4B /* SelectServiceView.swift in Sources */,
