@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @Binding var showSignedInView: Bool
     let authManager: AuthManager
     var body: some View {
         TabView {
@@ -29,7 +30,7 @@ struct HomeView: View {
                     Image(systemName: "ellipsis")
                     Text("Menu")
                 }
-            AccountView(viewModel: SettingsViewModel(authManager: authManager))
+            AccountView(viewModel: SettingsViewModel(authManager: authManager), showSignedInView: $showSignedInView)
                 .environmentObject(SettingsViewModel(authManager: authManager))
                 .tabItem {
                     Image(systemName: "gear")
@@ -43,6 +44,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static let authManager = AuthManager()
     static var previews: some View {
-        HomeView(authManager: authManager)
+        HomeView(showSignedInView: .constant(false), authManager: authManager)
     }
 }

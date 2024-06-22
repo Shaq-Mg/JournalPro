@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AccountView: View {
     @ObservedObject var viewModel: SettingsViewModel
+    @Binding var showSignedInView: Bool
     @State private var showSignOutAlert = false
     
     var body: some View {
@@ -31,14 +32,17 @@ struct AccountView: View {
         .confirmationDialog("Are uou sure you want to sign out your account?", isPresented: $showSignOutAlert) {
             Button("Yes") {
                 try? viewModel.signOut()
+                showSignedInView = true
+                
             }
         }
     }
 }
 
 struct AccountView_Previews: PreviewProvider {
+    static let authManager = AuthManager()
     static var previews: some View {
-        AccountView(viewModel: SettingsViewModel(authManager: AuthManager()))
+        AccountView(viewModel: SettingsViewModel(authManager: authManager), showSignedInView: .constant(false))
     }
 }
 
