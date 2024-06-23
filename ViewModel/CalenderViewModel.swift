@@ -9,7 +9,7 @@ import Foundation
 import Firebase
 import FirebaseFirestoreSwift
 
-class CalenderViewModel: ObservableObject {
+final class CalenderViewModel: ObservableObject {
     @Published var availableDates = [Date]()
     @Published var availableDays: Set<String> = []
     @Published var hours = [Hours]()

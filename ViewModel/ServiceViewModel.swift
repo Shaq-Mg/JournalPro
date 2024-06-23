@@ -8,7 +8,7 @@
 import Foundation
 import Firebase
 
-class ServiceViewModel: ObservableObject {
+final class ServiceViewModel: ObservableObject {
     @Published var services = [Service]()
     @Published var searchText = ""
     @Published var title = ""

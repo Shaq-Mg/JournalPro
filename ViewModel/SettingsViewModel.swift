@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 final class SettingsViewModel: ObservableObject {
     let authManager: AuthManager
     
@@ -16,5 +17,9 @@ final class SettingsViewModel: ObservableObject {
     
     func signOut() throws {
         try authManager.signOut()
+    }
+    
+    func deleteAccount() async throws {
+        try await authManager.delete()
     }
 }

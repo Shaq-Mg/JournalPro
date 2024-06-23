@@ -33,6 +33,17 @@ final class AuthManager {
         return AppUser(user: authDataResult.user)
     }
     
+    func signOut() throws {
+        try auth.signOut()
+    }
+    
+    func delete() async throws {
+        guard let user = auth.currentUser else {
+            return // handle error
+        }
+        try await user.delete()
+    }
+    
     func updatePassword(password: String) async throws {
         guard let user = auth.currentUser else {
             return // hnadle error
@@ -49,9 +60,5 @@ final class AuthManager {
     
     func restPassword(email: String) async throws {
         try await auth.sendPasswordReset(withEmail: email)
-    }
-    
-    func signOut() throws {
-        try auth.signOut()
     }
 }

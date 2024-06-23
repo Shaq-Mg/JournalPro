@@ -11,6 +11,7 @@ struct AccountView: View {
     @ObservedObject var viewModel: SettingsViewModel
     @Binding var showSignedInView: Bool
     @State private var showSignOutAlert = false
+    @State private var showDeleteAccountAlert = false
     
     var body: some View {
         VStack {
@@ -25,17 +26,29 @@ struct AccountView: View {
                 Section("Account") {
                     AccountButtonView(isPressed: { showSignOutAlert.toggle() }, title: "Sign out", imageName: "lock.fill")
                     
-                    AccountButtonView(isPressed: { }, title: "Delete account ", imageName: "minus.circle.fill")
+                    AccountButtonView(isPressed: { showDeleteAccountAlert.toggle() }, title: "Delete account ", imageName: "minus.circle.fill")
                 }
             }
         }
-        .confirmationDialog("Are uou sure you want to sign out your account?", isPresented: $showSignOutAlert) {
-            Button("Yes") {
+        .confirmationDialog("Sign out", isPresented: $showSignOutAlert, titleVisibility: .visible) {
+            Button("Yes", role: .destructive) {
                 try? viewModel.signOut()
                 showSignedInView = true
-                
             }
+        } message: {
+            Text("Continue to log out this account?")
         }
+        .confirmationDialog("Delete", isPresented: $showDeleteAccountAlert, titleVisibility: .visible) {
+            Button("Yes", role: .destructive) {
+                Task {
+                    try await viewModel.deleteAccount()
+                    showSignedInView = true
+                }
+            }
+        } message: {
+            Text("Are you sure that you want to delete this account?")
+        }
+
     }
 }
 
