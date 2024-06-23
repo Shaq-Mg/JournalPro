@@ -10,8 +10,8 @@ import SwiftUI
 struct SignInView: View {
     @ObservedObject var viewModel: SignInViewModel
     
-    init(authManager: AuthManager) {
-        _viewModel = ObservedObject(wrappedValue: SignInViewModel(authManager: authManager))
+    init(authManager: AuthManager, userManager: UserManager) {
+        _viewModel = ObservedObject(wrappedValue: SignInViewModel(authManager: authManager, userManager: userManager))
     }
     
     var body: some View {
@@ -53,10 +53,11 @@ struct SignInView: View {
 }
 struct SignInView_Previews: PreviewProvider {
     static let authManager = AuthManager()
+    static let userManager = UserManager()
     
     static var previews: some View {
         NavigationStack {
-            SignInView(authManager: authManager)
+            SignInView(authManager: authManager, userManager: userManager)
         }
     }
 }

@@ -33,6 +33,7 @@
 		464F9F5A2C0DEE6B00357430 /* ConfirmedBookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464F9F592C0DEE6B00357430 /* ConfirmedBookingView.swift */; };
 		4654BE952C289BAF0013F922 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4654BE942C289BAF0013F922 /* ProfileViewModel.swift */; };
 		4654BE972C289F390013F922 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4654BE962C289F390013F922 /* UserManager.swift */; };
+		4654BE992C28A4310013F922 /* DBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4654BE982C28A4310013F922 /* DBUser.swift */; };
 		465A96C32C0F2687007BE421 /* ServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A96C22C0F2687007BE421 /* ServiceViewModel.swift */; };
 		465A96C62C0F2B7A007BE421 /* ServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A96C52C0F2B7A007BE421 /* ServicesView.swift */; };
 		465A96C82C0F2E85007BE421 /* CreateServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A96C72C0F2E85007BE421 /* CreateServiceView.swift */; };
@@ -106,6 +107,7 @@
 		464F9F592C0DEE6B00357430 /* ConfirmedBookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmedBookingView.swift; sourceTree = "<group>"; };
 		4654BE942C289BAF0013F922 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		4654BE962C289F390013F922 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		4654BE982C28A4310013F922 /* DBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUser.swift; sourceTree = "<group>"; };
 		465A96C22C0F2687007BE421 /* ServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceViewModel.swift; sourceTree = "<group>"; };
 		465A96C52C0F2B7A007BE421 /* ServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesView.swift; sourceTree = "<group>"; };
 		465A96C72C0F2E85007BE421 /* CreateServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateServiceView.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				4627320F2C08B2930063524D /* AppUser.swift */,
 				469267152C137B3500498B4B /* Calender.swift */,
 				46139D682C0A7C6D00EBFBD0 /* Client.swift */,
+				4654BE982C28A4310013F922 /* DBUser.swift */,
 				461F753D2C18609D0063505F /* Hours.swift */,
 				461306A22C1C761C002A4FB5 /* Journal.swift */,
 				46E1E7832C0A550A00522BD4 /* Service.swift */,
@@ -545,6 +548,7 @@
 				462732122C08B50C0063524D /* SignInViewModel.swift in Sources */,
 				468322842BF387D4006F9BD4 /* CreateClientView.swift in Sources */,
 				4612EB6A2C1CF5B70038BDA7 /* HomeView.swift in Sources */,
+				4654BE992C28A4310013F922 /* DBUser.swift in Sources */,
 				464F9F5A2C0DEE6B00357430 /* ConfirmedBookingView.swift in Sources */,
 				469267112C136C2200498B4B /* Date+Est.swift in Sources */,
 				46F777472C2780EA00FF04F0 /* RootView.swift in Sources */,

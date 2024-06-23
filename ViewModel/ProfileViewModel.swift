@@ -9,15 +9,18 @@ import Foundation
 
 @MainActor
 final class ProfileViewModel: ObservableObject {
-    @Published private(set) var user: AppUser? = nil
+    @Published private(set) var user: DBUser? = nil
     
     let authManager: AuthManager
+    let userManager: UserManager
     
-    init(authManager: AuthManager) {
+    init(authManager: AuthManager, userManager: UserManager) {
         self.authManager = authManager
+        self.userManager = userManager
     }
     
-    func fetchCurrentUser() throws {
-        self.user = try authManager.fetchAuthUser()
+    func fetchCurrentUser() async throws {
+       let authDataResult = try authManager.fetchAuthUser()
+        self.user = try await userManager.getUser(userId: authDataResult.uid)
     }
 }

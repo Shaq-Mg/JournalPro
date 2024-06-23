@@ -39,13 +39,14 @@ struct HomeView: View {
                 }
         }
         .tint(.indigo)
-        .onAppear { try? viewModel.fetchCurrentUser() }
+        .task { try? await viewModel.fetchCurrentUser() }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static let authManager = AuthManager()
+    static let userManager = UserManager()
     static var previews: some View {
-        HomeView(viewModel: ProfileViewModel(authManager: authManager), showSignedInView: .constant(false))
+        HomeView(viewModel: ProfileViewModel(authManager: authManager, userManager: userManager), showSignedInView: .constant(false))
     }
 }

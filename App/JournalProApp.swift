@@ -26,7 +26,7 @@ struct JournalProApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                RootView(authManager: AuthManager())
+                RootView(authManager: AuthManager(), userManager: UserManager())
                     .environmentObject(serviceVM)
                     .environmentObject(appointmentVM)
                     .environmentObject(calenderVM)

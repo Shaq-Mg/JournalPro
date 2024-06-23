@@ -16,9 +16,11 @@ final class SignInViewModel: ObservableObject {
     @Published var loginStatusMessage = ""
     
     let authManager: AuthManager
+    let userManager: UserManager
     
-    init(authManager: AuthManager) {
+    init(authManager: AuthManager, userManager: UserManager) {
         self.authManager = authManager
+        self.userManager = userManager
     }
     
     func signUp() async throws {
@@ -26,7 +28,8 @@ final class SignInViewModel: ObservableObject {
             print("No email or password found.") // handle error
             return
         }
-        try await authManager.createUser(email: email, password: password)
+        let authDataResult = try await authManager.createUser(email: email, password: password)
+        try await userManager.createNewUser(auth: authDataResult)
     }
     
     func signIn() async throws {
