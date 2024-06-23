@@ -11,8 +11,8 @@ struct SignUpView: View {
     @Environment(\.dismiss) var dismiss
     @ObservedObject var viewModel: SignInViewModel
     
-    init(authManager: AuthManager) {
-        _viewModel = ObservedObject(wrappedValue: SignInViewModel(authManager: authManager))
+    init(authManager: AuthManager, userManager: UserManager) {
+        _viewModel = ObservedObject(wrappedValue: SignInViewModel(authManager: authManager, userManager: userManager))
     }
     
     var body: some View {
@@ -64,10 +64,11 @@ struct SignUpView: View {
 
 struct SignUpView_Previews: PreviewProvider {
     static let authManager = AuthManager()
+    static let userManager = UserManager()
     
     static var previews: some View {
         NavigationStack {
-            SignUpView(authManager: authManager)
+            SignUpView(authManager: authManager, userManager: userManager)
         }
     }
 }

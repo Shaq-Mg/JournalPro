@@ -41,9 +41,9 @@ final class SignInViewModel: ObservableObject {
     }
     
     func resetPassword() async throws {
-        let authUser = try authManager.fetchAuthUser()
+        let authenticatedUser = try authManager.fetchAuthUser()
         
-        guard let email = authUser.email else {
+        guard let email = authenticatedUser.email else {
             return // handle error
         }
         try await authManager.restPassword(email: email)

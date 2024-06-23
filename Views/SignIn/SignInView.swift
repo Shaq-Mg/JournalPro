@@ -37,7 +37,7 @@ struct SignInView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                     
                     NavigationLink("Dont have a account? Sign up") {
-                        SignUpView(authManager: viewModel.authManager)
+                        SignUpView(authManager: viewModel.authManager, userManager: viewModel.userManager)
                     }
                     .font(.callout)
                     .foregroundStyle(.black)

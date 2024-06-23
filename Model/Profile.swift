@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseAuth
 
-struct AppUser {
+struct Profile {
     let uid: String
     let email: String?
     

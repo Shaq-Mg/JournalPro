@@ -13,7 +13,7 @@ final class UserManager {
     
     let firestore = Firestore.firestore()
     
-    func createNewUser(auth: AppUser) async throws {
+    func createNewUser(auth: Profile) async throws {
         var userData: [String: Any] = [
             "user_id": auth.uid,
             "date_created": Timestamp()

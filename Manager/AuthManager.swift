@@ -14,23 +14,23 @@ final class AuthManager {
     
     init() { }
     
-    func fetchAuthUser() throws -> AppUser {
+    func fetchAuthUser() throws -> Profile {
         guard let user = auth.currentUser else {
             throw URLError(.badServerResponse) // handle error
         }
-        return AppUser(user: user)
+        return Profile(user: user)
     }
     
     @discardableResult
-    func createUser(email: String, password: String) async throws -> AppUser {
+    func createUser(email: String, password: String) async throws -> Profile {
         let authDataResult = try await auth.createUser(withEmail: email, password: password)
-        return AppUser(user: authDataResult.user)
+        return Profile(user: authDataResult.user)
     }
     
     @discardableResult
-    func signIn(email: String, password: String) async throws -> AppUser {
+    func signIn(email: String, password: String) async throws -> Profile {
         let authDataResult = try await auth.signIn(withEmail: email, password: password)
-        return AppUser(user: authDataResult.user)
+        return Profile(user: authDataResult.user)
     }
     
     func signOut() throws {

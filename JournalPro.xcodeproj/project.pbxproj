@@ -26,7 +26,7 @@
 		462732072C08AE990063524D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 462732062C08AE990063524D /* FirebaseStorage */; };
 		4627320B2C08AFAD0063524D /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4627320A2C08AFAD0063524D /* InputView.swift */; };
 		4627320E2C08B1A90063524D /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4627320D2C08B1A90063524D /* AuthManager.swift */; };
-		462732102C08B2930063524D /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4627320F2C08B2930063524D /* AppUser.swift */; };
+		462732102C08B2930063524D /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4627320F2C08B2930063524D /* Profile.swift */; };
 		462732122C08B50C0063524D /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462732112C08B50C0063524D /* SignInViewModel.swift */; };
 		462732142C08BB710063524D /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462732132C08BB710063524D /* SettingsViewModel.swift */; };
 		464F9F582C0DE38600357430 /* SelectClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464F9F572C0DE38600357430 /* SelectClientView.swift */; };
@@ -100,7 +100,7 @@
 		462731FC2C08ADB80063524D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4627320A2C08AFAD0063524D /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		4627320D2C08B1A90063524D /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		4627320F2C08B2930063524D /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
+		4627320F2C08B2930063524D /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		462732112C08B50C0063524D /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		462732132C08BB710063524D /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		464F9F572C0DE38600357430 /* SelectClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectClientView.swift; sourceTree = "<group>"; };
@@ -338,7 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				46E1E7812C0A54F100522BD4 /* Appointment.swift */,
-				4627320F2C08B2930063524D /* AppUser.swift */,
+				4627320F2C08B2930063524D /* Profile.swift */,
 				469267152C137B3500498B4B /* Calender.swift */,
 				46139D682C0A7C6D00EBFBD0 /* Client.swift */,
 				4654BE982C28A4310013F922 /* DBUser.swift */,
@@ -563,7 +563,7 @@
 				46F435C32C1733FD00E73814 /* ProfileMenuRow.swift in Sources */,
 				46E1E7802C0A50DD00522BD4 /* SignInView.swift in Sources */,
 				461306A12C1C75AA002A4FB5 /* ApptChartView.swift in Sources */,
-				462732102C08B2930063524D /* AppUser.swift in Sources */,
+				462732102C08B2930063524D /* Profile.swift in Sources */,
 				465A96C32C0F2687007BE421 /* ServiceViewModel.swift in Sources */,
 				466BB02E2C16293200532457 /* ApptInputView.swift in Sources */,
 				466BB02C2C16282000532457 /* CalenderHeaderView.swift in Sources */,

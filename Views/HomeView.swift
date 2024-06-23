@@ -26,7 +26,7 @@ struct HomeView: View {
                     Text("Bookings")
                 }
             MenuView()
-                .environmentObject(SignInViewModel(authManager: viewModel.authManager))
+                .environmentObject(SignInViewModel(authManager: viewModel.authManager, userManager: viewModel.userManager))
                 .tabItem {
                     Image(systemName: "ellipsis")
                     Text("Menu")
