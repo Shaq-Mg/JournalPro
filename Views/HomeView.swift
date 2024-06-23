@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
+    @ObservedObject var viewModel: ProfileViewModel
     @Binding var showSignedInView: Bool
-    let authManager: AuthManager
+    
     var body: some View {
         TabView {
             MainChartView()
@@ -25,25 +26,26 @@ struct HomeView: View {
                     Text("Bookings")
                 }
             MenuView()
-                .environmentObject(SignInViewModel(authManager: authManager))
+                .environmentObject(SignInViewModel(authManager: viewModel.authManager))
                 .tabItem {
                     Image(systemName: "ellipsis")
                     Text("Menu")
                 }
-            AccountView(viewModel: SettingsViewModel(authManager: authManager), showSignedInView: $showSignedInView)
-                .environmentObject(SettingsViewModel(authManager: authManager))
+            AccountView(viewModel: SettingsViewModel(authManager: viewModel.authManager), showSignedInView: $showSignedInView)
+                .environmentObject(SettingsViewModel(authManager: viewModel.authManager))
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Account")
                 }
         }
         .tint(.indigo)
+        .onAppear { try? viewModel.fetchCurrentUser() }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static let authManager = AuthManager()
     static var previews: some View {
-        HomeView(showSignedInView: .constant(false), authManager: authManager)
+        HomeView(viewModel: ProfileViewModel(authManager: authManager), showSignedInView: .constant(false))
     }
 }

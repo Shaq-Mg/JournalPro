@@ -38,15 +38,15 @@ struct AccountView: View {
         } message: {
             Text("Continue to log out this account?")
         }
-        .confirmationDialog("Delete", isPresented: $showDeleteAccountAlert, titleVisibility: .visible) {
-            Button("Yes", role: .destructive) {
+        .confirmationDialog("Delete permanently", isPresented: $showDeleteAccountAlert, titleVisibility: .visible) {
+            Button("Delete", role: .destructive) {
                 Task {
                     try await viewModel.deleteAccount()
                     showSignedInView = true
                 }
             }
         } message: {
-            Text("Are you sure that you want to delete this account?")
+            Text("Are you sure that you want to remove your account permanently?")
         }
 
     }

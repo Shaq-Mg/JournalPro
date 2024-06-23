@@ -17,7 +17,7 @@ struct RootView: View {
     
     var body: some View {
         ZStack {
-            HomeView(showSignedInView: $showSignedInView, authManager: viewModel.authManager)
+            HomeView(viewModel: ProfileViewModel(authManager: viewModel.authManager), showSignedInView: $showSignedInView)
         }
         .onAppear {
             let authUser = try? viewModel.authManager.fetchAuthUser()

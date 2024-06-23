@@ -31,6 +31,8 @@
 		462732142C08BB710063524D /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462732132C08BB710063524D /* SettingsViewModel.swift */; };
 		464F9F582C0DE38600357430 /* SelectClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464F9F572C0DE38600357430 /* SelectClientView.swift */; };
 		464F9F5A2C0DEE6B00357430 /* ConfirmedBookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464F9F592C0DEE6B00357430 /* ConfirmedBookingView.swift */; };
+		4654BE952C289BAF0013F922 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4654BE942C289BAF0013F922 /* ProfileViewModel.swift */; };
+		4654BE972C289F390013F922 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4654BE962C289F390013F922 /* UserManager.swift */; };
 		465A96C32C0F2687007BE421 /* ServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A96C22C0F2687007BE421 /* ServiceViewModel.swift */; };
 		465A96C62C0F2B7A007BE421 /* ServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A96C52C0F2B7A007BE421 /* ServicesView.swift */; };
 		465A96C82C0F2E85007BE421 /* CreateServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A96C72C0F2E85007BE421 /* CreateServiceView.swift */; };
@@ -102,6 +104,8 @@
 		462732132C08BB710063524D /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		464F9F572C0DE38600357430 /* SelectClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectClientView.swift; sourceTree = "<group>"; };
 		464F9F592C0DEE6B00357430 /* ConfirmedBookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmedBookingView.swift; sourceTree = "<group>"; };
+		4654BE942C289BAF0013F922 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		4654BE962C289F390013F922 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		465A96C22C0F2687007BE421 /* ServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceViewModel.swift; sourceTree = "<group>"; };
 		465A96C52C0F2B7A007BE421 /* ServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesView.swift; sourceTree = "<group>"; };
 		465A96C72C0F2E85007BE421 /* CreateServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateServiceView.swift; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				4627320D2C08B1A90063524D /* AuthManager.swift */,
+				4654BE962C289F390013F922 /* UserManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -319,6 +324,7 @@
 				460CE6732C0CB297009AFA53 /* AppointmentViewModel.swift */,
 				466BB0292C16261900532457 /* CalenderViewModel.swift */,
 				46139D6A2C0A7D1300EBFBD0 /* ClientViewModel.swift */,
+				4654BE942C289BAF0013F922 /* ProfileViewModel.swift */,
 				462732132C08BB710063524D /* SettingsViewModel.swift */,
 				465A96C22C0F2687007BE421 /* ServiceViewModel.swift */,
 				462732112C08B50C0063524D /* SignInViewModel.swift */,
@@ -565,6 +571,7 @@
 				465A96C82C0F2E85007BE421 /* CreateServiceView.swift in Sources */,
 				461306A52C1C9DC8002A4FB5 /* MainChartView.swift in Sources */,
 				462732142C08BB710063524D /* SettingsViewModel.swift in Sources */,
+				4654BE952C289BAF0013F922 /* ProfileViewModel.swift in Sources */,
 				461F753E2C18609D0063505F /* Hours.swift in Sources */,
 				4683228C2BF38C64006F9BD4 /* ClientDetailView.swift in Sources */,
 				461306A32C1C761C002A4FB5 /* Journal.swift in Sources */,
@@ -572,6 +579,7 @@
 				468322862BF38A16006F9BD4 /* ClientView.swift in Sources */,
 				464F9F582C0DE38600357430 /* SelectClientView.swift in Sources */,
 				465A96C62C0F2B7A007BE421 /* ServicesView.swift in Sources */,
+				4654BE972C289F390013F922 /* UserManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
