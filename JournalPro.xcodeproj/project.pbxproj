@@ -224,13 +224,13 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		4627320C2C08B1660063524D /* Manager */ = {
+		4627320C2C08B1660063524D /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				4627320D2C08B1A90063524D /* AuthManager.swift */,
 				4654BE962C289F390013F922 /* UserManager.swift */,
 			);
-			path = Manager;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		465A96C42C0F2B5A007BE421 /* Service */ = {
@@ -249,7 +249,7 @@
 				4683227B2BF3823D006F9BD4 /* App */,
 				4692670F2C136C0000498B4B /* Extension */,
 				462732092C08AF920063524D /* Components */,
-				4627320C2C08B1660063524D /* Manager */,
+				4627320C2C08B1660063524D /* Managers */,
 				468322792BF3822D006F9BD4 /* Model */,
 				468322782BF38222006F9BD4 /* ViewModel */,
 				468322772BF38219006F9BD4 /* Views */,

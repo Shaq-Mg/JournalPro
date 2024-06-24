@@ -7,8 +7,16 @@
 
 import Foundation
 
-struct DBUser {
-    let uid: String?
+struct DBUser: Codable {
+    let uid: String
     let email: String?
     let dateCreated: Date?
+    let isPremium: Bool
+    
+    init(auth: Profile) {
+        self.uid = auth.uid
+        self.email = auth.email
+        self.dateCreated = Date()
+        self.isPremium = auth.isPremium
+    }
 }

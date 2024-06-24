@@ -18,6 +18,7 @@ struct MenuView: View {
                         ProfileMenuRow(image: "calendar", title: "Bookings")
                         ProfileMenuRow(image: "person.2.fill", title: "Clients")
                         ProfileMenuRow(image: "handbag.fill", title: "Services")
+                        ProfileMenuRow(image: "book.closed.fill", title: "Schedule")
                         ProfileMenuRow(image: "personalhotspot", title: "Business page")
                     }
                     Section("Settings"){
