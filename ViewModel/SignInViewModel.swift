@@ -23,6 +23,12 @@ final class SignInViewModel: ObservableObject {
         self.userManager = userManager
     }
     
+    private func clearLoginInformation() {
+        email = ""
+        password = ""
+        confirmPassword = ""
+    }
+    
     func signUp() async throws {
         guard !email.isEmpty, !password.isEmpty, !confirmPassword.isEmpty else {
             print("No email or password found.") // handle error
@@ -31,14 +37,16 @@ final class SignInViewModel: ObservableObject {
         let authDataResult = try await authManager.createUser(email: email, password: password)
         let user = DBUser(auth: authDataResult)
         try userManager.createNewUser(user: user)
+        self.clearLoginInformation()
     }
     
     func signIn() async throws {
         guard !email.isEmpty, !password.isEmpty else {
-            print("Incoorect login information") // handle error
+            print("Incorrect login information") // handle error
             return
         }
         try await authManager.signIn(email: email, password: password)
+        self.clearLoginInformation()
     }
     
     func resetPassword() async throws {

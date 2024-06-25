@@ -30,11 +30,14 @@ struct SignUpView: View {
                     }
                     Button {
                         Task {
-                            try await viewModel.signUp()
-                            dismiss()
-                            viewModel.email = ""
-                            viewModel.password = ""
-                            viewModel.confirmPassword = ""
+                            do {
+                                try await viewModel.signUp()
+                                viewModel.loginStatusMessage = "Successflly created user inoformation"
+                                dismiss()
+                            } catch {
+                                print("Failed to save user to database \(error)")
+                                viewModel.loginStatusMessage = "Failed to login user: \(error)"
+                            }
                         }
                     } label: {
                         Text("Sign Up")
@@ -51,10 +54,17 @@ struct SignUpView: View {
                     }
                     .font(.callout)
                     .foregroundStyle(.black)
+                    
                     Text(viewModel.loginStatusMessage)
-                        .foregroundStyle(.white)
+                        .foregroundStyle(.secondary)
                 }
                 .padding(.horizontal)
+                .onAppear {
+                    viewModel.email = ""
+                    viewModel.password = ""
+                    viewModel.confirmPassword = ""
+                    viewModel.loginStatusMessage = ""
+                }
             }
         }
         .navigationTitle("Create account")
